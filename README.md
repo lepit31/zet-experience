@@ -98,8 +98,8 @@ argon-design-system-angular
 │   │   ├── landing
 │   │   │   ├── landing.component.html
 │   │   │   ├── landing.component.scss
-│   │   │   ├── landing.component.spec.ts
-│   │   │   └── landing.component.ts
+│   │   │   ├── faq.component.spec.ts
+│   │   │   └── feeling-futur.component.ts
 │   │   ├── login
 │   │   │   ├── login.component.css
 │   │   │   ├── login.component.html

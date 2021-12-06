@@ -15,6 +15,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
+import {FaqComponent} from './custom/faq/faq.component';
+import {FeelingFutureComponent} from './custom/feeling-futur/feeling-future.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { LoginComponent } from './login/login.component';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    FaqComponent,
+    FeelingFutureComponent
   ],
   imports: [
     BrowserModule,
