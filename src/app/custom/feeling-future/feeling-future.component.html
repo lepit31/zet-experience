@@ -1,0 +1,51 @@
+<main>
+    <div class="position-relative">
+        <!-- shape Hero -->
+        <section class="section section-lg section-shaped pb-0">
+            <div class="shape shape-style-1 shape-default">
+            </div>
+        </section>
+        <section class="section section-lg pt-lg-0">
+            <form name="feelingFutureForm" role="form" [formGroup]="feelingFutureForm">
+                <div class="container py-lg-md d-flex">
+                    <div class="col px-0">
+                        <div class="row row-grid ">
+                            <div class="col-lg-6  text-center">
+                                <input type="text" placeholder="Pseudo (min 3 caracteres)" formControlName="userPseudo">
+                            </div>
+                            <div class="col-lg-6  text-center">
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input class="custom-control-input" id="userConsent"   formControlName="userConsent"
+                                           type="checkbox">
+                                    <label class="custom-control-label" for="userConsent">
+                                        <span>userConsent</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-grid ">
+                            <div class="col-lg-5  text-center">
+
+                                <img src="./assets/img/oasis/Lake%201.jpg" class="card-img-top">
+                                <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('left')"
+                                        [disabled]="feelingFutureForm.invalid">Left
+                                </button>
+                            </div>
+                            <div class="col-lg-2">
+                                <p class="lead ">{{currentStatus}}</p>
+                            </div>
+                            <div class="col-lg-5  text-center">
+
+                                <img src="./assets/img/oasis/Rainbow%201.jpg" class="card-img-top">
+                                <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('right')"
+                                        [disabled]="feelingFutureForm.invalid">Right
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+    </div>
+</main>

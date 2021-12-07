@@ -55,22 +55,22 @@ def testData():
 
     print(result)
 
-def createPrediction(userPseudo, userLocation):
-    # chosse between erotic and non erotic
+def createPrediction(userPseudo, userPrediction):
+    # choose between erotic and non erotic
     imageType = getRandomType()
     # choose the corespondant image
-    image = getRandomEroticImage() if imageType == "erotic" else  getRandomNonEroticImage()
-    location = getRandomLocation()
-    isSuccess = userLocation == location
+    imageURL = getRandomEroticImage() if imageType == "erotic" else  getRandomNonEroticImage()
+    imageLocation = getRandomLocation()
+    isSuccess = userPrediction == location
 
     prediction = dict()
 
     prediction["id"]=str(uuid.uuid4())
     prediction["userPseudo"]=userPseudo
-    prediction["userLocation"]=userLocation
+    prediction["userPrediction"]=userPrediction
     prediction["imageType"]=imageType
-    prediction["image"]=image
-    prediction["location"]=location
+    prediction["imageURL"]=imageURL
+    prediction["imageLocation"]=imageLocation
     prediction["isSuccess"]=isSuccess
     prediction["date"]=datetime.datetime.now().isoformat()
 

@@ -9,7 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import {FaqComponent} from './custom/faq/faq.component';
-import {FeelingFutureComponent} from './custom/feeling-futur/feeling-future.component';
+import {FeelingFutureComponent} from './custom/feeling-future/feeling-future.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
