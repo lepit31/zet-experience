@@ -19,8 +19,10 @@ export class FeelingFutureComponent implements OnInit {
     });
 
     currentStatus = 'none';
-    currentImageLeft = '';
-    currentImageRight = '';
+    currentImageLeft = 'assets/img/theme/curtain.jpg';
+    currentImageRight = 'assets/img/theme/curtain.jpg';
+
+    isWaiting = false;
 
     constructor(private fb: FormBuilder, private feelingFutureService: FeelingFutureService) {
     }
@@ -28,19 +30,29 @@ export class FeelingFutureComponent implements OnInit {
     ngOnInit() {
     }
 
+    onResetWaiting() {
+        this.currentImageLeft = 'assets/img/theme/curtain.jpg';
+        this.currentImageRight = 'assets/img/theme/curtain.jpg';
+        this.isWaiting = false;
+    }
+
     onUserPredictLocation(predictedLocation: string) {
+        this.isWaiting = true;
         const request = new FeelingFutureRequestModel(this.feelingFutureForm.get('userPseudo')!.value, predictedLocation);
         this.feelingFutureService.sendPrediction(request)
             .subscribe((response: HttpResponse<FeelingFutureResponseModel>) => {
                     const currentResponse = response.body;
                     if (currentResponse != null) {
-                        this.currentStatus = currentResponse.isSuccess + 'lol';
-                        if (currentResponse.imageLocation === 'right') {
-                            this.currentImageLeft = 'assets/img/theme/blank.jpg';
-                            this.currentImageRight = currentResponse.imageURL;
+
+                        const currentImageUrl = currentResponse.isSuccess ? 'assets/img/oasis/' + currentResponse.imageURL : 'assets/img/theme/blank.jpg';
+                        this.currentStatus = currentResponse.isSuccess ? 'success' : 'fail';
+
+                        if (currentResponse.userPrediction === 'right') {
+                            this.currentImageLeft = 'assets/img/theme/curtain.jpg';
+                            this.currentImageRight = currentImageUrl;
                         } else {
-                            this.currentImageLeft = currentResponse.imageURL;
-                            this.currentImageRight = 'assets/img/theme/blank.jpg';
+                            this.currentImageRight = 'assets/img/theme/curtain.jpg';
+                            this.currentImageLeft = currentImageUrl;
                         }
                     } else {
                         this.currentStatus = 'error';

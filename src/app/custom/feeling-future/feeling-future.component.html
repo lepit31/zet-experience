@@ -25,20 +25,31 @@
                         </div>
                         <div class="row row-grid ">
                             <div class="col-lg-5  text-center">
-
-                                <img src="./assets/img/oasis/Lake%201.jpg" class="card-img-top">
-                                <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('left')"
-                                        [disabled]="feelingFutureForm.invalid">Left
-                                </button>
+                                <img  [src]="currentImageLeft" class="card-img-top">
                             </div>
-                            <div class="col-lg-2">
-                                <p class="lead ">{{currentStatus}}</p>
+                            <div class="col-lg-2 text-center">
+                                <button   *ngIf="currentStatus == 'success'" class="btn btn-1 btn-outline-success" type="button">Success</button>
+                                <button   *ngIf="currentStatus == 'fail'" class="btn btn-1 btn-outline-danger" type="button">Fail</button>
                             </div>
                             <div class="col-lg-5  text-center">
+                                <img [src]="currentImageRight"  class="card-img-top">
+                            </div>
+                        </div>
+                        <div class="row row-grid ">
+                            <div class="col-lg-5  text-center">
 
-                                <img src="./assets/img/oasis/Rainbow%201.jpg" class="card-img-top">
-                                <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('right')"
-                                        [disabled]="feelingFutureForm.invalid">Right
+                                <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('left')"
+                                        [disabled]="feelingFutureForm.invalid|| isWaiting">Left
+                                </button>
+                            </div>
+                            <div class="col-lg-2 text-center">
+                                <button class="btn btn-primary" type="button" (click)="onResetWaiting()"
+                                        [disabled]="!isWaiting">next Image
+                                </button>
+                            </div>
+                            <div class="col-lg-5  text-center">
+                                <button class="btn btn-primary"  type="button" (click)="onUserPredictLocation('right')"
+                                        [disabled]="feelingFutureForm.invalid || isWaiting">Right
                                 </button>
                             </div>
                         </div>
