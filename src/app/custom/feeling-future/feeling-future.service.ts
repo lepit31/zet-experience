@@ -12,7 +12,10 @@ export class FeelingFutureService {
     constructor(protected http: HttpClient) {
     }
 
-    getResult(request: FeelingFutureRequestModel): Observable<HttpResponse<FeelingFutureResponseModel>> {
-        return this.http.post<FeelingFutureResponseModel>('/feeling-future/get-response', request, {observe: 'response'});
+    sendPrediction(request: FeelingFutureRequestModel): Observable<HttpResponse<FeelingFutureResponseModel>> {
+        return this.http.post<FeelingFutureResponseModel>(
+            'https://s37se9vy5m.execute-api.eu-west-1.amazonaws.com/prod/get-response',
+            request ,
+            {observe: 'response'});
     }
 }

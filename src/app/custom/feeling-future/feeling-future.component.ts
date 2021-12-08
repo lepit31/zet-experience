@@ -30,7 +30,7 @@ export class FeelingFutureComponent implements OnInit {
 
     onUserPredictLocation(predictedLocation: string) {
         const request = new FeelingFutureRequestModel(this.feelingFutureForm.get('userPseudo')!.value, predictedLocation);
-        this.feelingFutureService.getResult(request)
+        this.feelingFutureService.sendPrediction(request)
             .subscribe((response: HttpResponse<FeelingFutureResponseModel>) => {
                     const currentResponse = response.body;
                     if (currentResponse != null) {
