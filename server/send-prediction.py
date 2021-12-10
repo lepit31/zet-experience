@@ -4,6 +4,8 @@ import datetime
 import boto3
 import uuid
 
+from numpy import random
+
 
 dynamodb = boto3.resource('dynamodb')
 ddt = dynamodb.Table('predictions')
@@ -14,22 +16,19 @@ eroticImages =    ["Nude couple 1.jpg","Nude couple 2.jpg","Nude couple 3.jpg","
 nonEroticImages = ["Miserable pose 3.jpg","Dummy 1.jpg","Dead bodies 1.jpg","Dead bodies 2.jpg","KKK rally 2.jpg","Dog 26.jpg","Dead bodies 3.jpg","KKK rally 1.jpg","Injury 4.jpg","War 6.jpg","Tumor 1.jpg","Fire 9.jpg","Garbage dump 2.jpg","Dirt 1.jpg","Animal carcass 5.jpg","Garbage dump 4.jpg","Severed finger 1.jpg","War 8.jpg","Fire 5.jpg","Fire 7.jpg","Fire 11.jpg","War 1.jpg","Scary face 1.jpg","Explosion 5.jpg","Destruction 4.jpg","Bloody knife 1.jpg","Car crash 1.jpg","Dog 24.jpg","Destruction 3.jpg","Keyboard 3.jpg","Sunset 4.jpg","Lake 16.jpg","Nature 1.jpg","Sunset 3.jpg","Baby 5.jpg","Lake 10.jpg","Fireworks 1.jpg","Lake 13.jpg","Baby 1.jpg","Dog 18.jpg","Dog 4.jpg","Siblings 1.jpg","Lake 8.jpg","Penguins 2.jpg","Cat 5.jpg","Rainbow 1.jpg","Lake 15.jpg","Lake 1.jpg","Rainbow 2.jpg","Fireworks 2.jpg","Dog 12.jpg","Lake 14.jpg","Beach 2.jpg","Beach 1.jpg","Lake 12.jpg","Lake 2.jpg","Lake 9.jpg","Dog 6.jpg"]
 
 def lambda_handler(event, context):
-
-
+    
+    #testData()
     if ((len(event["userPseudo"]) < 3) or not (event["userPrediction"] == "right" or event["userPrediction"] == "left")) :
         raise Exception('Request not valid')
-
+    
     prediction = createPrediction(event["userPseudo"],event["userPrediction"])
-
+    savePrediction(prediction)
+    
     return prediction
 
 def getRandomType():
     i = secrets.randbelow(len(types))
     return types[i]
-
-def getRandomLocation():
-    i = secrets.randbelow(len(locations))
-    return locations[i]
 
 def getRandomEroticImage():
     i = secrets.randbelow(len(eroticImages))
@@ -40,6 +39,12 @@ def getRandomNonEroticImage():
     i = secrets.randbelow(len(nonEroticImages))
     return nonEroticImages[i]
 
+#use another random function    
+def getRandomLocation():
+    i = random.randint(len(locations))
+    return locations[i]
+
+
 def testData():
     result = dict()
     for i in range(1000):
@@ -47,7 +52,7 @@ def testData():
         prediction = createPrediction("test", getRandomLocation())
 
         result[prediction['imageType']] = result.get(prediction['imageType'], 0) + 1
-        result[prediction['location']] = result.get(prediction['location'], 0) + 1
+        result[prediction['imageLocation']] = result.get(prediction['imageLocation'], 0) + 1
         if prediction['isSuccess'] and  prediction['imageType'] == "erotic":
             result['eroticSuccess'] = result.get('eroticSuccess', 0) + 1
         if prediction['isSuccess'] and prediction['imageType'] == "nonErotic":
@@ -74,7 +79,6 @@ def createPrediction(userPseudo, userPrediction):
     prediction["isSuccess"]=isSuccess
     prediction["date"]=datetime.datetime.now().isoformat()
 
-    print(prediction)
     return prediction
 
 def savePrediction(prediction):
@@ -83,5 +87,3 @@ def savePrediction(prediction):
         TableName='predictions',
         Item=prediction
     )
-    print(res)
-    print("end")

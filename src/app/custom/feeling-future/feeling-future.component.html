@@ -15,7 +15,7 @@
                             </div>
                             <div class="col-lg-6  text-center">
                                 <div class="custom-control custom-checkbox mb-3">
-                                    <input class="custom-control-input" id="userConsent"   formControlName="userConsent"
+                                    <input class="custom-control-input" id="userConsent" formControlName="userConsent"
                                            type="checkbox">
                                     <label class="custom-control-label" for="userConsent">
                                         <span>userConsent</span>
@@ -25,14 +25,20 @@
                         </div>
                         <div class="row row-grid ">
                             <div class="col-lg-5  text-center">
-                                <img  [src]="currentImageLeft" class="card-img-top">
+                                <img [src]="currentImageLeft" class="card-img-top">
                             </div>
                             <div class="col-lg-2 text-center">
-                                <button   *ngIf="currentStatus == 'success'" class="btn btn-1 btn-outline-success" type="button">Success</button>
-                                <button   *ngIf="currentStatus == 'fail'" class="btn btn-1 btn-outline-danger" type="button">Fail</button>
+                                <button *ngIf="currentStatus == 'success'" class="btn btn-1 btn-outline-success"
+                                        type="button">Success
+                                </button>
+                                <button *ngIf="currentStatus == 'fail'" class="btn btn-1 btn-outline-danger"
+                                        type="button">Fail
+                                </button>
+                                <button *ngIf="currentStatus == 'waiting'" class="btn btn-1 btn-outline-warning"
+                                        type="button">Wait <i class="fa fa-spinner"></i></button>
                             </div>
                             <div class="col-lg-5  text-center">
-                                <img [src]="currentImageRight"  class="card-img-top">
+                                <img [src]="currentImageRight" class="card-img-top">
                             </div>
                         </div>
                         <div class="row row-grid ">
@@ -48,15 +54,36 @@
                                 </button>
                             </div>
                             <div class="col-lg-5  text-center">
-                                <button class="btn btn-primary"  type="button" (click)="onUserPredictLocation('right')"
+                                <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('right')"
                                         [disabled]="feelingFutureForm.invalid || isWaiting">Right
                                 </button>
+                            </div>
+                        </div>
+
+                        <div class="row row-grid ">
+                            <div class="col-lg-3  text-center">
+                                Global : {{nbImageSuccess}} / {{nbImage}}
+                            </div>
+
+                            <div class="col-lg-2  text-center">
+                                A gauche : {{nbLeftSuccess}} / {{nbLeft}}
+                            </div>
+
+                            <div class="col-lg-2  text-center">
+                                A droite : {{nbRightSuccess}} / {{nbRight}}
+                            </div>
+
+                            <div class="col-lg-2  text-center">
+                                Erotique : {{nbEroticSuccess}} / {{nbErotic}}
+                            </div>
+
+                            <div class="col-lg-3  text-center">
+                                Non Erotique : {{nbNonEroticSuccess}} / {{nbNonErotic}}
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-
         </section>
     </div>
 </main>
