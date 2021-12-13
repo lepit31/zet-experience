@@ -24,8 +24,8 @@ export class FeelingFutureComponent implements OnInit {
 
     isWaiting = false;
 
-    nbImage = 0;
-    nbImageSuccess = 0;
+    nbPrediction = 0;
+    nbPredictionSuccess = 0;
     nbLeft = 0;
     nbLeftSuccess = 0;
     nbRight = 0;
@@ -73,9 +73,9 @@ export class FeelingFutureComponent implements OnInit {
 
                         // calc user stat
 
-                        this.nbImage++;
+                        this.nbPrediction++;
                         if (currentResponse.isSuccess) {
-                            this.nbImageSuccess++;
+                            this.nbPredictionSuccess++;
                         }
 
                         if (currentResponse.imageType === 'erotic') {
