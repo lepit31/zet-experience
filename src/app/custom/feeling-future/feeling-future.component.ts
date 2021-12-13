@@ -4,6 +4,7 @@ import {FeelingFutureRequestModel} from './feeling-future-request.model';
 import {FeelingFutureService} from './feeling-future.service';
 import {FeelingFutureResponseModel} from './feeling-future-response.model';
 import {HttpResponse} from '@angular/common/http';
+import {FeelingFutureStatisticModel} from './feeling-future-statistic.model';
 
 @Component({
     selector: 'app-feeling-futur',
@@ -34,6 +35,23 @@ export class FeelingFutureComponent implements OnInit {
     nbEroticSuccess = 0;
     nbNonErotic = 0;
     nbNonEroticSuccess = 0;
+
+    statNbUser = 0;
+    statNbPrediction = 0;
+    statNbPredictionSuccess = 0;
+    statNbLeft = 0;
+    statNbLeftSuccess = 0;
+    statNbRight = 0;
+    statNbRightSuccess = 0;
+    statNbErotic = 0;
+    statNbEroticSuccess = 0;
+    statNbNonErotic = 0;
+    statNbNonEroticSuccess = 0;
+
+    displayStat = false;
+
+    focus: boolean;
+    statUserPseudo: string;
 
     constructor(private fb: FormBuilder, private feelingFutureService: FeelingFutureService) {
     }
@@ -108,5 +126,27 @@ export class FeelingFutureComponent implements OnInit {
                     }
                 },
                 () => (this.currentStatus = 'error'));
+    }
+
+    onGetStatistic() {
+        this.displayStat = false;
+        this.feelingFutureService.getStatistic(this.statUserPseudo)
+            .subscribe((response: HttpResponse<FeelingFutureStatisticModel>) => {
+                const currentStat = response.body;
+                this.displayStat = true;
+
+                this.statNbUser = currentStat.nbUser;
+                this.statNbPrediction = currentStat.nbPrediction;
+                this.statNbPredictionSuccess = currentStat.nbPredictionSuccess;
+                this.statNbLeft = currentStat.nbLeft;
+                this.statNbLeftSuccess = currentStat.nbLeftSuccess;
+                this.statNbRight = currentStat.nbRight;
+                this.statNbRightSuccess =currentStat.nbRightSuccess;
+                this.statNbErotic = currentStat.nbErotic;
+                this.statNbEroticSuccess = currentStat.nbEroticSuccess;
+                this.statNbNonErotic = currentStat.nbNonErotic;
+                this.statNbNonEroticSuccess = currentStat.nbNonEroticSuccess;
+
+            });
     }
 }

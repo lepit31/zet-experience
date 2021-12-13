@@ -59,7 +59,6 @@
                                 </button>
                             </div>
                         </div>
-
                         <div class="row row-grid ">
                             <div class="col-lg-3  text-center">
                                 Global : {{nbPredictionSuccess}} / {{nbPrediction}}
@@ -84,6 +83,54 @@
                     </div>
                 </div>
             </form>
+        </section>
+        <section class="section section-lg pt-lg-0">
+            <div class="container py-lg-md d-flex">
+                <div class="col px-0">
+                    <div class="row row-grid ">
+                        <div class="col-lg-6  text-center">
+                            <div class="form-group" [ngClass]="{'focused':focus===true}">
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="Recherche par pseudo ou vide pour statistique global " type="text" (focus)="focus=true"
+                                           (blur)="focus=false"  [(ngModel)]="statUserPseudo">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6  text-center">
+                            <button class="btn btn-primary" type="button" (click)="onGetStatistic()">Get Stat
+                            </button>
+                        </div>
+                    </div>
+                    <div *ngIf="displayStat" class="row row-grid ">
+                        <div class="col-lg-2  text-center">
+                            User : {{statNbUser}}
+                        </div>
+                        <div class="col-lg-2  text-center">
+                            Global : {{statNbPredictionSuccess}} / {{statNbPrediction}}
+                        </div>
+
+                        <div class="col-lg-2  text-center">
+                            A gauche : {{statNbLeftSuccess}} / {{statNbLeft}}
+                        </div>
+
+                        <div class="col-lg-2  text-center">
+                            A droite : {{statNbRightSuccess}} / {{statNbRight}}
+                        </div>
+
+                        <div class="col-lg-2  text-center">
+                            Erotique : {{statNbEroticSuccess}} / {{statNbErotic}}
+                        </div>
+
+                        <div class="col-lg-2  text-center">
+                            Non Erotique : {{statNbNonEroticSuccess}}/{{statNbNonErotic}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 </main>

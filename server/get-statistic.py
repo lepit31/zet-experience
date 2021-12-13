@@ -8,18 +8,18 @@ from boto3.dynamodb.conditions import Key, Attr
 
 def lambda_handler(event, context):
 
-    nbUser = userTable.scan(Select='COUNT').get('Count',0)
-
+    # by default search for all userPseudo
     filterByPseudo = Attr("userPseudo").exists()
-    print(event.get('queryStringParameters'))
+
     requestParam = event.get('queryStringParameters')
     # if pseudo get statistic only for the pseudo
     if requestParam :
         userPseudo = requestParam.get('pseudo')
         if userPseudo :
             filterByPseudo =  Attr("userPseudo").eq(userPseudo)
-            nbUser = 1
 
+
+    nbUser = userTable.scan(Select='COUNT',FilterExpression = filterByPseudo).get('Count',0)
 
     nbPrediction = predictionTable.scan(Select='COUNT',FilterExpression = filterByPseudo).get('Count',0)
     nbPredictionSuccess = predictionTable.scan(Select='COUNT',FilterExpression = Attr("isSuccess").eq(True) & filterByPseudo ).get('Count',0)
@@ -39,8 +39,24 @@ def lambda_handler(event, context):
 
     print(f'Pseudo {nbUser} Prediction {nbPredictionSuccess} / {nbPrediction}  A gauche : {nbLeftSuccess} / {nbLeft} A droite : {nbRightSuccess} / {nbRight} Erotique : {nbEroticSuccess} / {nbErotic} Non Erotique : {nbNonEroticSuccess} / {nbNonErotic} ')
 
-    # if pseudo get personal statistic
+    stat = dict()
+    stat["nbUser"] = nbUser
+    stat["nbPrediction"] = nbPrediction
+    stat["nbPredictionSuccess"] = nbPredictionSuccess
+    stat["nbLeft"] = nbLeft
+    stat["nbLeftSuccess"] = nbLeftSuccess
+    stat["nbRight"] = nbRight
+    stat["nbRightSuccess"] = nbRightSuccess
+    stat["nbErotic"] = nbErotic
+    stat["nbEroticSuccess"] = nbEroticSuccess
+    stat["nbNonErotic"] = nbNonErotic
+    stat["nbNonEroticSuccess"] = nbNonEroticSuccess
+
     return {
         'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
+        'headers': {
+            'Access-Control-Allow-Origin' : '*'
+        },
+        'body': json.dumps(stat)
     }
+
