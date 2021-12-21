@@ -149,4 +149,8 @@ export class FeelingFutureComponent implements OnInit {
 
             });
     }
+
+    scrollIntoView($element): void {
+        $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    }
 }

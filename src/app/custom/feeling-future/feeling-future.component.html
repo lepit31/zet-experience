@@ -1,33 +1,35 @@
 <main>
     <div class="position-relative">
         <!-- shape Hero -->
-        <section class="section section-lg section-shaped pb-0">
+        <section class="section section-shaped pb-0">
             <div class="shape shape-style-1 shape-default">
             </div>
         </section>
-        <section class="section section-lg pt-lg-0">
+        <section class="section section-sm ">
             <form name="feelingFutureForm" role="form" [formGroup]="feelingFutureForm">
                 <div class="container py-lg-md d-flex">
                     <div class="col px-0">
                         <div class="row row-grid ">
-                            <div class="col-lg-6  text-center">
-                                <input type="text" placeholder="Pseudo (min 3 caracteres)" formControlName="userPseudo">
+                            <div class="col-sm-5  ">
+                                Mon Pseudonyme :
+                                <input id="userPseudo" type="text" placeholder="minimun 3 caracteres"
+                                       formControlName="userPseudo">
                             </div>
-                            <div class="col-lg-6  text-center">
+                            <div class="col-sm-5  offset-sm-2 ">
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input class="custom-control-input" id="userConsent" formControlName="userConsent"
                                            type="checkbox">
                                     <label class="custom-control-label" for="userConsent">
-                                        <span>userConsent</span>
+                                        <span>J'ai plus de 18 ans et j'approuve le protocole  </span>
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div class="row row-grid ">
-                            <div class="col-lg-5  text-center">
+                        <div class="row mt-4">
+                            <div class="col-sm-5  text-center">
                                 <img [src]="currentImageLeft" class="card-img-top">
                             </div>
-                            <div class="col-lg-2 text-center">
+                            <div class="col-sm-2 text-center">
                                 <button *ngIf="currentStatus == 'success'" class="btn btn-1 btn-outline-success"
                                         type="button">Success
                                 </button>
@@ -37,46 +39,46 @@
                                 <button *ngIf="currentStatus == 'waiting'" class="btn btn-1 btn-outline-warning"
                                         type="button">Wait <i class="fa fa-spinner"></i></button>
                             </div>
-                            <div class="col-lg-5  text-center">
+                            <div class="col-sm-5  text-center">
                                 <img [src]="currentImageRight" class="card-img-top">
                             </div>
                         </div>
-                        <div class="row row-grid ">
-                            <div class="col-lg-5  text-center">
+                        <div class="row mt-4">
+                            <div class="col-sm-5  text-center">
 
                                 <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('left')"
                                         [disabled]="feelingFutureForm.invalid|| isWaiting">Left
                                 </button>
                             </div>
-                            <div class="col-lg-2 text-center">
+                            <div class="col-sm-2 text-center">
                                 <button class="btn btn-primary" type="button" (click)="onResetWaiting()"
                                         [disabled]="!isWaiting">next Image
                                 </button>
                             </div>
-                            <div class="col-lg-5  text-center">
+                            <div class="col-sm-5  text-center">
                                 <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('right')"
                                         [disabled]="feelingFutureForm.invalid || isWaiting">Right
                                 </button>
                             </div>
                         </div>
-                        <div class="row row-grid ">
-                            <div class="col-lg-3  text-center">
+                        <div class="row mt-4 ">
+                            <div class="col-sm-3  text-center">
                                 Global : {{nbPredictionSuccess}} / {{nbPrediction}}
                             </div>
 
-                            <div class="col-lg-2  text-center">
+                            <div class="col-sm-2  text-center">
                                 A gauche : {{nbLeftSuccess}} / {{nbLeft}}
                             </div>
 
-                            <div class="col-lg-2  text-center">
+                            <div class="col-sm-2  text-center">
                                 A droite : {{nbRightSuccess}} / {{nbRight}}
                             </div>
 
-                            <div class="col-lg-2  text-center">
+                            <div class="col-sm-2  text-center">
                                 Erotique : {{nbEroticSuccess}} / {{nbErotic}}
                             </div>
 
-                            <div class="col-lg-3  text-center">
+                            <div class="col-sm-3  text-center">
                                 Non Erotique : {{nbNonEroticSuccess}} / {{nbNonErotic}}
                             </div>
                         </div>
@@ -84,18 +86,23 @@
                 </div>
             </form>
         </section>
-        <section class="section section-lg pt-lg-0">
-            <div class="container py-lg-md d-flex">
+        <section class="section section-sm">
+            <div class="container  d-flex">
                 <div class="col px-0">
-                    <div class="row row-grid ">
+                    <div>
+                        <h4> Statistique :</h4>
+                    </div>
+                    <div class="row  ">
                         <div class="col-lg-6  text-center">
                             <div class="form-group" [ngClass]="{'focused':focus===true}">
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Recherche par pseudo ou vide pour statistique global " type="text" (focus)="focus=true"
-                                           (blur)="focus=false"  [(ngModel)]="statUserPseudo">
+                                    <input class="form-control"
+                                           placeholder="Recherche par pseudo ou vide pour statistique global "
+                                           type="text" (focus)="focus=true"
+                                           (blur)="focus=false" [(ngModel)]="statUserPseudo">
                                 </div>
                             </div>
                         </div>
@@ -127,6 +134,164 @@
 
                         <div class="col-lg-2  text-center">
                             Non Erotique : {{statNbNonEroticSuccess}}/{{statNbNonErotic}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm">
+            <div class="container  d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4> Hypothèse testée :</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Notre physiologie peut anticiper des simulies érotiques imprévisibles avant qu'ils ne
+                            surviennent.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm">
+            <div class="container  d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4> Protocole :</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ol>
+                                <li>Le participant à plus de 18 ans et accepte de voir des images pouvant heurter les
+                                    personnes les plus sensible par son caractère explicitement sexuel ou graphique
+                                </li>
+                                <li>Le participant doit renseigner un pseudonyme d’au moins 3 caractères et accepter les
+                                    conditions d’utilisation
+                                </li>
+                                <li>Le participant peut pratiquer 3 minutes de relaxation grâce a une musique
+                                    appaisantes ( <a href="https://www.youtube.com/watch?v=9TGlc0Fufgk">exemple 1</a> ,
+                                    <a href="https://www.youtube.com/watch?v=bQoOev5GNYM">exemple 2</a> , <a
+                                            href="https://www.youtube.com/watch?v=Bf_YemfEaDs">exemple 3</a> )
+                                </li>
+                                <li>Le participant doit essayer de deviner sous quel rideau se trouve l’image grâce au
+                                    bouton gauche ou droite
+                                </li>
+                                <li>Une fois la sélection faite par le participant le rideau se levé et dévoile le
+                                    résultat soit une image (érotique ou non érotique) soit un carré blanc si l’image
+                                    était sous l’autre rideau
+                                </li>
+                                <li>Les statistiques de la session sont mis à jour et le participant doit cliquer sur le
+                                    bouton « image suivante »
+                                </li>
+                                <li>Il n’y a pas de limite de temps ou de nombre de prédictions mais plus le nombre de
+                                    prédiction est importante plus la p-value a de sens
+                                </li>
+                                <li>Si la p-value d’une session de plus de 100 images est inferieur a 5% veuillez nous
+                                    contacter par mail contact@zet-exp.fr avec votre pseudo utilisé
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm">
+            <div class="container  d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4> Méthode :</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Ce protocole de test est une reproduction amateure mais la plus sérieuse possible de
+                            l’expérience numero 1 de ce papier scientifique de American Psychological Association
+                            https://pubmed.ncbi.nlm.nih.gov/21280961/ <a
+                                href="https://web.archive.org/web/20120103233037/http://dbem.ws/FeelingFuture.pdf">(lien)</a><br/>
+                            Le code source de l’application est disponible en open source
+                            <a href="https://github.com/lepit31/zet-experience"> (lien) </a> , il s’agit d’une architecture
+                            client (Angular
+                            IO)/Server(AWS Lambda python3.7)<br/>
+                            Les images sont issue de l’ OPEN AFFECTIVE STANDARDIZED IMAGE SET <a
+                                href="https://en.wikipedia.org/wiki/International_Affective_Picture_System#cite_ref-19">
+                             (lien) </a>
+                            au lieu de
+                            International Affective Picture System initialement utilisé car non libre de droit<br/>
+                            Il y a 58 images érotique : 14 images de couple hétérosexuelle, 22 images d’homme et 22
+                            images de femme<br/>
+                            Il y a 58 images non érotique : les 29 images avec les critères « beauty_mean » les plus
+                            élevés et 29 images les plus faible<br/>
+                            Pour chaque prédiction le système utilise 2 algorithmes diffèrent pour choisir de façon
+                            aléatoire et régulière le type d’image (érotique ou non) et la position (gauche ou droite)
+                            Apres que le participant est prédit la position
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm">
+            <div class="container  d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4> Différence avec l’expérience initiale :</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Pas de limitation du nombre de prédiction<br/>
+                            Une fonction de test permet de simuler un millier de prédiction<br/>
+                            Le serveur étant dans le cloud AWS, l’ordinateur du participant ne connais pas le code du
+                            serveur et ne peut pas influencer dessus, cela exclu en cas de résultat positif l’hypothèse
+                            de la Psychokinesis
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm">
+            <div class="container  d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4> Protection de la vie privée :</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Seul un pseudonnyme est demandé, aucune autre information personnelle ou cookie n’est
+                            demandé,
+                            Chaque prédiction est enregistrée avec les informations suivante :
+                            <ul>
+                                <li>Le pseudo</li>
+                                <li>La position prédite</li>
+                                <li>La position générée</li>
+                                <li>Le type d’image</li>
+                                <li>L’image</li>
+                                <li>La date</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm">
+            <div class="container  d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4> Explotation des résultats :</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            calculer la P-value etc
                         </div>
                     </div>
                 </div>
