@@ -10,29 +10,26 @@
                     <div class="col px-0">
                         <div class="row mt-4">
                             <div class="col-sm-4  text-center">
-                                Nb {{nbZenerTested}} / 25
+                                Cartes : {{nbZenerTested}} / 25
                             </div>
                             <div class="col-sm-4  text-center">
                                 Reussite {{nbZenerSuccess}}
                             </div>
                             <div class="col-sm-4  text-center">
-                                Erreur {{nbZenerError}}
+                                Echec {{nbZenerError}}
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-sm-12  text-center">
-                                <img src="assets/img/zener/zener-wave.png">
+                                <img [src]="currentZenerCard">
                             </div>
                         </div>
                         <div class="row mt-4">
-                            <div class="col-sm-4 text-center">
-                                <button class="btn btn-danger" type="button" (click)="onZenerError()">Error</button>
+                            <div class="col-sm-6 text-center">
+                                <button class="btn btn-danger" type="button" (click)="onZenerError()" [disabled]="this.nbZenerTested >= this.zenerCards.length">Echec</button>
                             </div>
-                            <div class="col-sm-4 text-center">
-                                <button class="btn btn-primary" type="button" (click)="onZenerNext()">Suivant</button>
-                            </div>
-                            <div class="col-sm-4  text-center">
-                                <button class="btn btn-success" type="button" (click)="onZenerSuccess()">Reussite</button>
+                            <div class="col-sm-6  text-center">
+                                <button class="btn btn-success" type="button" (click)="onZenerSuccess()" [disabled]="this.nbZenerTested >= this.zenerCards.length">Reussite</button>
                             </div>
                         </div>
                     </div>
@@ -49,32 +46,17 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ol>
-                                <li>Le participant à plus de 18 ans et accepte de voir des images pouvant heurter les
-                                    personnes les plus sensible par son caractère explicitement sexuel ou graphique
+                                <li>Une carte Zener a cinq forme (Carré, Cercle, Croix, Etoile, Vague)
                                 </li>
-                                <li>Le participant doit renseigner un pseudonyme d’au moins 3 caractères et accepter les
-                                    conditions d’utilisation
+                                <li>25 cartes avec cinq carte de chaque formes sont trié de facon aléatoire
                                 </li>
-                                <li>Le participant peut pratiquer 3 minutes de relaxation grâce a une musique
-                                    appaisantes ( <a href="https://www.youtube.com/watch?v=9TGlc0Fufgk">exemple 1</a> ,
-                                    <a href="https://www.youtube.com/watch?v=bQoOev5GNYM">exemple 2</a> , <a
-                                            href="https://www.youtube.com/watch?v=Bf_YemfEaDs">exemple 3</a> )
+                                <li>L'experimenté sans regardé ni les cartes ni l'expérimentateur essaye de deviné les cartes
                                 </li>
-                                <li>Le participant doit essayer de deviner sous quel rideau se trouve l’image grâce au
-                                    bouton gauche ou droite
+                                <li>Apres chaque réponse de l'experimenté , l'expérimentateur clique sur le bouton "reussite" ou "echec" puis previent l'experimenté qu'une nouvelle carte tiré
                                 </li>
-                                <li>Une fois la sélection faite par le participant le rideau se levé et dévoile le
-                                    résultat soit une image (érotique ou non érotique) soit un carré blanc si l’image
-                                    était sous l’autre rideau
+                                <li>L'expérimentateur ne communique pas a l'experimenté l'echec ou la reussite d'une carte avant la fin de l'experience
                                 </li>
-                                <li>Les statistiques de la session sont mis à jour et le participant doit cliquer sur le
-                                    bouton « image suivante »
-                                </li>
-                                <li>Il n’y a pas de limite de temps ou de nombre de prédictions mais plus le nombre de
-                                    prédiction est importante plus la p-value a de sens
-                                </li>
-                                <li>Si la p-value d’une session de plus de 100 images est inferieur a 5% veuillez nous
-                                    contacter par mail contact@zet-exp.fr avec votre pseudo utilisé
+                                <li>Au dessus de 10 bonnes réponse, il y a moins de 1% de chance que cela soit du uniquement au hazard
                                 </li>
                             </ol>
                         </div>
@@ -88,8 +70,11 @@
 
                     <div class="row">
                         <div class="col-sm-12">
-                           Carte zener par Mikhail Ryazanov (talk) 01:30, 1 April 2014 (UTC) — File:Cartas Zener.svg + File:Zenerkarten c.jpg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=31927664
-                        </div>
+                            <ul>
+                               <li>Hygiène Mentale : <a href="https://www.youtube.com/watch?v=pyj6ysoUBNw&ab_channel=Hygi%C3%A8neMentale" target="_blank">Ep13 Comment Tester le Paranormal avec la Science ? (Les cartes de Zener)</a>    </li>
+                                <li> Carte zener par Mikhail Ryazanov (talk) 01:30, 1 April 2014 (UTC) — File:Cartas Zener.svg + File:Zenerkarten c.jpg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=31927664</li>
+                            </ul>
+                           </div>
                     </div>
                 </div>
             </div>
