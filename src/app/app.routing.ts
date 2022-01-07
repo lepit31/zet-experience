@@ -10,6 +10,7 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import {FaqComponent} from './custom/faq/faq.component';
 import {FeelingFutureComponent} from './custom/feeling-future/feeling-future.component';
+import {ZernerComponent} from './custom/zener/zerner.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes =[
     { path: 'landing',          component: LandingComponent },
     { path: 'faq',          component: FaqComponent },
     { path: 'feeling-future',          component: FeelingFutureComponent },
+    { path: 'zener',          component: ZernerComponent },
     { path: 'login',          component: LoginComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

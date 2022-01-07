@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import {FaqComponent} from './custom/faq/faq.component';
 import {FeelingFutureComponent} from './custom/feeling-future/feeling-future.component';
 import { HttpClientModule } from '@angular/common/http';
+import {ZernerComponent} from './custom/zener/zerner.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     LoginComponent,
     FaqComponent,
-    FeelingFutureComponent
+    FeelingFutureComponent,
+    ZernerComponent
   ],
     imports: [
         BrowserModule,
