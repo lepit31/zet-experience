@@ -19,6 +19,7 @@ import {FaqComponent} from './custom/faq/faq.component';
 import {FeelingFutureComponent} from './custom/feeling-future/feeling-future.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ZernerComponent} from './custom/zener/zerner.component';
+import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {ZernerComponent} from './custom/zener/zerner.component';
     LoginComponent,
     FaqComponent,
     FeelingFutureComponent,
-    ZernerComponent
+    ZernerComponent,
+    MontyHallComponent
   ],
     imports: [
         BrowserModule,

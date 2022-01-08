@@ -1,0 +1,32 @@
+<main>
+    <div class="position-relative">
+        <!-- shape Hero -->
+        <section class="section section-shaped pb-0">
+            <div class="shape shape-style-1 shape-default">
+            </div>
+        </section>
+        <section class="section section-sm ">
+            <div class="container py-lg-md d-flex">
+                <div class="col px-0">
+                    <div class="row mt-4">
+                        <div class="col-sm-4  text-center">
+                            <img [src]="noStrat[0].displayedImg"
+                                 (click)="onNoStrat(0)"
+                                 [className]=" 'monty-hall-card ' + noStrat[0].selection">
+                        </div>
+                        <div class="col-sm-4  text-center">
+                            <img [src]="noStrat[1].displayedImg"
+                                 (click)="onNoStrat(1)"
+                                 [className]=" 'monty-hall-card ' + noStrat[1].selection">
+                        </div>
+                        <div class="col-sm-4  text-center">
+                            <img [src]="noStrat[2].displayedImg"
+                                 (click)="onNoStrat(2)"
+                                 [className]=" 'monty-hall-card ' + noStrat[2].selection">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
