@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MontyHallCardModel} from './monty-hall-card.model';
+import {MontyHallDoorModel} from './monty-hall-game/monty-hall-door.model';
 
 @Component({
     selector: 'app-monty-hall',
@@ -9,12 +9,12 @@ import {MontyHallCardModel} from './monty-hall-card.model';
 
 export class MontyHallComponent implements OnInit {
 
-    noStrat: MontyHallCardModel[] = [];
+    noStrat: MontyHallDoorModel[] = [];
     noStratStep = 'init';
     noStratPartyPlayed = 0;
     noStratSuccess = 0;
 
-    stratKeep: MontyHallCardModel[] = [];
+    stratKeep: MontyHallDoorModel[] = [];
     stratKeepStep = 'init';
     stratKeepPartyPlayed = 0;
     stratKeepSuccess = 0;
@@ -30,11 +30,11 @@ export class MontyHallComponent implements OnInit {
     initNoStrat() {
         this.noStrat = [];
         for (let i = 0; i < 3; i++) {
-            this.noStrat.push(new MontyHallCardModel());
+            this.noStrat.push(new MontyHallDoorModel());
         }
         // add red-card randomly
         const randIndex = this.randomIntFromInterval(0, 2);
-        this.noStrat[randIndex].behindCurtain = 'red-car';
+        this.noStrat[randIndex].behindDoor = 'red-car';
         this.noStratStep = 'wait-user-first-choice';
         console.log(this.noStrat);
     }
@@ -42,11 +42,11 @@ export class MontyHallComponent implements OnInit {
     initStratKeep() {
         this.stratKeep = [];
         for (let i = 0; i < 9; i++) {
-            this.stratKeep.push(new MontyHallCardModel());
+            this.stratKeep.push(new MontyHallDoorModel());
         }
         // add red-card randomly
         const randIndex = this.randomIntFromInterval(0, 8);
-        this.stratKeep[randIndex].behindCurtain = 'red-car';
+        this.stratKeep[randIndex].behindDoor = 'red-car';
         this.stratKeepStep = 'wait-user-first-choice';
     }
 
@@ -67,7 +67,7 @@ export class MontyHallComponent implements OnInit {
             // host select the red car and revel other
             for (let i = 0; i < this.noStrat.length; i++) {
                 if (i !== choice) {
-                    if (this.noStrat[i].behindCurtain === 'red-car') {
+                    if (this.noStrat[i].behindDoor === 'red-car') {
                         this.noStrat[i].selection = 'monty-hall-host-selection';
                     } else {
                         this.noStrat[i].displayedImg = 'assets/img/monty-hall/goat.png';
@@ -76,7 +76,7 @@ export class MontyHallComponent implements OnInit {
                 }
             }
             // in case user choice is the red car
-            if (this.noStrat[choice].behindCurtain === 'red-car') {
+            if (this.noStrat[choice].behindDoor === 'red-car') {
                 // select first or last
                 if (choice === 0) {
                     this.noStrat[(this.noStrat.length - 1)].displayedImg = 'assets/img/theme/curtain-200.jpg';
@@ -94,14 +94,14 @@ export class MontyHallComponent implements OnInit {
         if (this.noStratStep === 'wait-user-final-choice') {
             //reveal all card
             for (let i = 0; i < this.noStrat.length; i++) {
-                if (this.noStrat[i].behindCurtain === 'red-car') {
+                if (this.noStrat[i].behindDoor === 'red-car') {
                     this.noStrat[i].displayedImg = 'assets/img/monty-hall/red_car.png';
                 } else {
                     this.noStrat[i].displayedImg = 'assets/img/monty-hall/goat.png';
                 }
                 this.noStrat[i].enabled = false;
             }
-            if (this.noStrat[choice].behindCurtain === 'red-car') {
+            if (this.noStrat[choice].behindDoor === 'red-car') {
                 this.noStratSuccess++;
                 this.noStratStep = 'success';
             } else {
@@ -121,14 +121,14 @@ export class MontyHallComponent implements OnInit {
             this.stratKeep[choice].selection = 'monty-hall-user-selection';
 
             for (let i = 0; i < this.stratKeep.length; i++) {
-                if (this.stratKeep[i].behindCurtain === 'red-car') {
+                if (this.stratKeep[i].behindDoor === 'red-car') {
                     this.stratKeep[i].displayedImg = 'assets/img/monty-hall/red_car.png';
                 } else {
                     this.stratKeep[i].displayedImg = 'assets/img/monty-hall/goat.png';
                 }
                 this.stratKeep[i].enabled = false;
             }
-            if (this.stratKeep[choice].behindCurtain === 'red-car') {
+            if (this.stratKeep[choice].behindDoor === 'red-car') {
                 this.stratKeepSuccess++;
                 this.stratKeepStep = 'success';
             } else {

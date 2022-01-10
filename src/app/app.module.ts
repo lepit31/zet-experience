@@ -20,6 +20,8 @@ import {FeelingFutureComponent} from './custom/feeling-future/feeling-future.com
 import { HttpClientModule } from '@angular/common/http';
 import {ZernerComponent} from './custom/zener/zerner.component';
 import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
+import { MontyHallGameComponent } from './custom/monty-hall/monty-hall-game/monty-hall-game.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
     FaqComponent,
     FeelingFutureComponent,
     ZernerComponent,
-    MontyHallComponent
+    MontyHallComponent,
+    MontyHallGameComponent
   ],
     imports: [
         BrowserModule,
@@ -43,7 +46,8 @@ import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
         AppRoutingModule,
         HomeModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CommonModule
     ],
   providers: [],
   bootstrap: [AppComponent]

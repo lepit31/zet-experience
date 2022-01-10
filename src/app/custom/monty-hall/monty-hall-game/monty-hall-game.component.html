@@ -1,0 +1,36 @@
+<div class="container py-lg-md d-flex">
+    <div class="col px-0">
+        <div *ngFor="let rowPosition of rows" class="row mt-2">
+            <div *ngFor="let colPosition of cols" class="col-sm-4  text-center">
+                <div *ngIf="colPosition+ (rowPosition * cols.length) < montyHallGame.length">
+                    <img [src]="montyHallGame[colPosition+ (rowPosition * cols.length)].displayedImg"
+                         (click)="onMontyHallGameChoice(colPosition+ (rowPosition * cols.length))"
+                         [className]=" 'monty-hall-card ' + montyHallGame[colPosition+ (rowPosition * cols.length)].selection">
+                </div>
+                Porte : {{colPosition + (rowPosition * cols.length) + 1}}
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-sm-8  text-center">
+                <div *ngIf="montyHallGameStep==='wait-user-first-choice'">Selectionner une des portes</div>
+                <div *ngIf="montyHallGameStep==='wait-user-final-choice'">Garder votre premier choix (porte bleu) <br>
+                    Ou changer pour celle du présentateur (porte jaune)
+                </div>
+                <div *ngIf="montyHallGameStep==='success'">Vous avez gagnez !</div>
+                <div *ngIf="montyHallGameStep==='fail'">Vous avez perdu !</div>
+            </div>
+            <div class="col-sm-2  text-center">
+
+                <div class="col-sm-6  text-center">
+                    <button class="btn btn-primary" type="button" (click)="onMontyHallGameReset()">Rejouer
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                Essais : {{montyHallGamePartyPlayed}}<br>
+                Succés : {{montyHallGameSuccess}}
+            </div>
+        </div>
+    </div>
+</div>
