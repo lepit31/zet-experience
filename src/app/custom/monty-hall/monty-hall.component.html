@@ -8,21 +8,118 @@
         <section class="section section-sm ">
             <div class="container py-lg-md d-flex">
                 <div class="col px-0">
-                    <div class="row mt-4">
+                    <div class="row mt-2">
                         <div class="col-sm-4  text-center">
                             <img [src]="noStrat[0].displayedImg"
-                                 (click)="onNoStrat(0)"
+                                 (click)="onNoStratChoice(0)"
                                  [className]=" 'monty-hall-card ' + noStrat[0].selection">
                         </div>
                         <div class="col-sm-4  text-center">
                             <img [src]="noStrat[1].displayedImg"
-                                 (click)="onNoStrat(1)"
+                                 (click)="onNoStratChoice(1)"
                                  [className]=" 'monty-hall-card ' + noStrat[1].selection">
                         </div>
                         <div class="col-sm-4  text-center">
                             <img [src]="noStrat[2].displayedImg"
-                                 (click)="onNoStrat(2)"
+                                 (click)="onNoStratChoice(2)"
                                  [className]=" 'monty-hall-card ' + noStrat[2].selection">
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-8  text-center">
+                            <div *ngIf="noStratStep==='wait-user-first-choice'">Selectionner un des trois rideaux</div>
+                            <div *ngIf="noStratStep==='wait-user-final-choice'">Garder votre premier choix (en bleu) ou
+                                la selection du présentateur (en jaune)
+                            </div>
+                            <div *ngIf="noStratStep==='success'">Vous avez gagnez !</div>
+                            <div *ngIf="noStratStep==='fail'">Vous avez perdu !</div>
+                        </div>
+                        <div class="col-sm-2  text-center">
+
+                            <div class="col-sm-6  text-center">
+                                <button class="btn btn-primary" type="button" (click)="onNoStratReset()">Rejouer
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            Essais : {{noStratPartyPlayed}}<br>
+                            Succés : {{noStratSuccess}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm ">
+            <div class="container py-lg-md d-flex">
+                <div class="col px-0">
+                    <div class="row  mt-2">
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[0].displayedImg"
+                                 (click)="onStratKeepChoice(0)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[0].selection">
+                        </div>
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[1].displayedImg"
+                                 (click)="onStratKeepChoice(1)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[1].selection">
+                        </div>
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[2].displayedImg"
+                                 (click)="onStratKeepChoice(2)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[2].selection">
+                        </div>
+                    </div>
+                    <div class="row  mt-2" >
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[3].displayedImg"
+                                 (click)="onStratKeepChoice(3)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[3].selection">
+                        </div>
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[4].displayedImg"
+                                 (click)="onStratKeepChoice(4)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[4].selection">
+                        </div>
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[5].displayedImg"
+                                 (click)="onStratKeepChoice(5)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[5].selection">
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[6].displayedImg"
+                                 (click)="onStratKeepChoice(6)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[6].selection">
+                        </div>
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[7].displayedImg"
+                                 (click)="onStratKeepChoice(7)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[7].selection">
+                        </div>
+                        <div class="col-sm-4  text-center">
+                            <img [src]="stratKeep[8].displayedImg"
+                                 (click)="onStratKeepChoice(8)"
+                                 [className]=" 'monty-hall-card ' + stratKeep[8].selection">
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-8  text-center">
+                            <div *ngIf="stratKeepStep==='wait-user-first-choice'">Selectionner un des trois rideaux</div>
+                            <div *ngIf="stratKeepStep==='success'">Vous avez gagnez !</div>
+                            <div *ngIf="stratKeepStep==='fail'">Vous avez perdu !</div>
+                        </div>
+                        <div class="col-sm-2  text-center">
+                            <div class="col-sm-6  text-center">
+                                <button class="btn btn-primary" type="button" (click)="onStratKeepReset()">Rejouer
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            Essais : {{stratKeepPartyPlayed}}<br>
+                            Succés : {{stratKeepSuccess}}
                         </div>
                     </div>
                 </div>
