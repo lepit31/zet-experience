@@ -125,5 +125,11 @@ export class MontyHallGameComponent implements OnInit {
         this.initMontyHallGame();
     }
 
+    displaySuccessPercent() {
+        if (this.montyHallGamePartyPlayed === 0) {
+            return '0 %';
+        }
+        return Math.ceil( (this.montyHallGameSuccess / this.montyHallGamePartyPlayed) * 100) + '%';
+    }
 
 }
