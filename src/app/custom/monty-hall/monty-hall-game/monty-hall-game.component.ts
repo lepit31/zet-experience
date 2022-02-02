@@ -1,13 +1,15 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MontyHallDoorModel} from './monty-hall-door.model';
 
+import { faSync } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
     selector: 'app-monty-hall-game',
     templateUrl: './monty-hall-game.component.html',
     styleUrls: ['./monty-hall-game.component.scss']
 })
 export class MontyHallGameComponent implements OnInit {
-
+    faSync = faSync;
     @Input() nbDoors!: number;
     @Input() strategy!: string;
 

@@ -1,4 +1,4 @@
-<div class="container py-lg-md d-flex">
+<div class="container-fluid py-lg-md d-flex">
     <div class="col px-0">
         <div *ngFor="let rowPosition of rows" class="row mt-2">
             <div *ngFor="let colPosition of cols" class="col-sm-4  text-center">
@@ -11,8 +11,8 @@
             </div>
         </div>
 
-        <div class="row ">
-            <div class="col-sm-8  text-center">
+        <div class="row monty-hall-separate-door ">
+            <div class="col-sm-6 ">
                 <div *ngIf="montyHallGameStep==='wait-user-first-choice'">Selectionner une des portes</div>
                 <div *ngIf="montyHallGameStep==='wait-user-final-choice'">Garder votre premier choix (porte bleu) <br>
                     Ou changer pour celle du présentateur (porte jaune)
@@ -20,16 +20,14 @@
                 <div *ngIf="montyHallGameStep==='success'">Vous avez gagnez !</div>
                 <div *ngIf="montyHallGameStep==='fail'">Vous avez perdu !</div>
             </div>
-            <div class="col-sm-2  text-center">
-
-                <div class="col-sm-6  text-center">
-                    <button class="btn btn-primary" type="button" (click)="onMontyHallGameReset()">Rejouer
-                    </button>
-                </div>
-            </div>
-            <div class="col-sm-2">
+            <div class="col-sm-4 ">
                 Essais : {{montyHallGamePartyPlayed}}<br>
                 Succés : {{montyHallGameSuccess}} ( {{displaySuccessPercent()}})
+            </div>
+            <div class="col-sm-2  text-center">
+                    <button class="btn btn-primary" type="button" (click)="onMontyHallGameReset()">
+                        <fa-icon [icon]="faSync"></fa-icon>
+                    </button>
             </div>
         </div>
     </div>

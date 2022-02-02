@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+
 @Component({
     selector: 'app-monty-hall',
     templateUrl: './monty-hall.component.html',

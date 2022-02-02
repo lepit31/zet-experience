@@ -22,6 +22,7 @@ import {ZernerComponent} from './custom/zener/zerner.component';
 import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
 import { MontyHallGameComponent } from './custom/monty-hall/monty-hall-game/monty-hall-game.component';
 import {CommonModule} from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {CommonModule} from '@angular/common';
         HomeModule,
         HttpClientModule,
         ReactiveFormsModule,
-        CommonModule
+        CommonModule,
+        FontAwesomeModule
     ],
   providers: [],
   bootstrap: [AppComponent]
