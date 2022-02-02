@@ -5,7 +5,7 @@
             <div class="shape shape-style-1 shape-default">
             </div>
         </section>
-        <section class="section section-sm ">
+        <section class="section section-sm  pt-0 ">
             <form name="feelingFutureForm" role="form" [formGroup]="feelingFutureForm">
                 <div class="container py-lg-md d-flex">
                     <div class="col px-0">
@@ -86,7 +86,7 @@
                 </div>
             </form>
         </section>
-        <section class="section section-sm">
+        <section class="section section-sm  pt-0">
             <div class="container  d-flex">
                 <div class="col px-0">
                     <div>
@@ -139,24 +139,26 @@
                 </div>
             </div>
         </section>
-        <section class="section section-sm">
+        <section class="section section-sm  pt-0">
             <div class="container  d-flex">
                 <div class="col px-0">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4> Hypothèse testée :</h4>
+                            <h4> Hypothèses:</h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            Notre physiologie peut anticiper des simulies érotiques imprévisibles avant qu'ils ne
+                            Hypothese testée : Notre physiologie peut anticiper des simulies érotiques imprévisibles avant qu'ils ne
                             surviennent.
+                            <br>
+                            Hypothese nulle : L'humain ne fait pas mieux que le hazard
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section section-sm">
+        <section class="section section-sm  pt-0">
             <div class="container  d-flex">
                 <div class="col px-0">
                     <div class="row">
@@ -181,7 +183,7 @@
                                 <li>Le participant doit essayer de deviner sous quel rideau se trouve l’image grâce au
                                     bouton gauche ou droite
                                 </li>
-                                <li>Une fois la sélection faite par le participant le rideau se levé et dévoile le
+                                <li>Une fois la sélection faite par le participant le rideau se leve et dévoile le
                                     résultat soit une image (érotique ou non érotique) soit un carré blanc si l’image
                                     était sous l’autre rideau
                                 </li>
@@ -189,7 +191,7 @@
                                     bouton « image suivante »
                                 </li>
                                 <li>Il n’y a pas de limite de temps ou de nombre de prédictions mais plus le nombre de
-                                    prédiction est importante plus la p-value a de sens
+                                    prédiction est importante plus la p-value a du sens
                                 </li>
                                 <li>Si la p-value d’une session de plus de 100 images est inferieur a 5% veuillez nous
                                     contacter par mail contact@zet-exp.fr avec votre pseudo utilisé
@@ -200,7 +202,7 @@
                 </div>
             </div>
         </section>
-        <section class="section section-sm">
+        <section class="section section-sm  pt-0">
             <div class="container  d-flex">
                 <div class="col px-0">
                     <div class="row">
@@ -235,7 +237,7 @@
                 </div>
             </div>
         </section>
-        <section class="section section-sm">
+        <section class="section section-sm  pt-0">
             <div class="container  d-flex">
                 <div class="col px-0">
                     <div class="row">
@@ -255,7 +257,7 @@
                 </div>
             </div>
         </section>
-        <section class="section section-sm">
+        <section class="section section-sm  pt-0">
             <div class="container  d-flex">
                 <div class="col px-0">
                     <div class="row">
@@ -281,7 +283,7 @@
                 </div>
             </div>
         </section>
-        <section class="section section-sm">
+        <section class="section section-sm  pt-0">
             <div class="container  d-flex">
                 <div class="col px-0">
                     <div class="row">
@@ -290,15 +292,36 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-sm-6">
+                           <img src="assets/img/feeling-future/feeling-future-p-value.png" class="w-100">
+                        </div>
+
+                        <div class="col-sm-6">
+                            Une distribution binomial correspond a une probabilité de réponse au hazard <br>
+                            Elle a les caractéristiques suivante :
+                            <ol>
+                                <li>Le nombre d'essaie (ici les images uniquement erotique testées) </li>
+                                <li>La probabilité de reussir par le hazard (ici 1 chance sur 2 soit 0.5)</li>
+                                <li>Le nombre de reussite (ici les images erotique trouvées par le participant) </li>
+                                <li>La P-Value</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
                         <div class="col-sm-12">
-                            calculer la P-value etc
+                           Une P-Value en dessous de 5 % (moins de 0.05)  en parapsychologie est considéré comme une forte présomption <strong>contre</strong> l'hypothèse nulle<br>
+                           Cela ne signifie pas que l'hypothese testée est vrai mais que le hazard n'est plus l'hypothese par defaut<br>
+
+                            Pour tester votre P-Value une application est préconfiguré   <a href="https://www.geogebra.org/m/pfxjdeqk" target="_blank">sur le site géogebra</a><br>
+                            En modifiant le nombre d'essaie et le nombre de reussite avec vos résultats vous obtiendrais votre P-Value (plus le nombre d'essaie est important , plus la P-Value est significative)
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section ">
+        <section class="section pt-0 ">
             <div class="container  d-flex">
                 <div class="col px-0">
 
@@ -321,6 +344,8 @@
                                     anomalous anticipation of random future events</a></li>
                                 <li>Wikipedia : <a href="https://fr.wikipedia.org/wiki/Valeur_p"
                                                    target="_blank">Valeur p</a></li>
+                                <li>Hygiène Mentale : <a href="https://www.youtube.com/watch?v=pyj6ysoUBNw&ab_channel=Hygi%C3%A8neMentale" target="_blank">Ep13 Comment Tester le Paranormal avec la Science ? (Les cartes de Zener)</a>    </li>
+
                             </ul>
                         </div>
                     </div>
