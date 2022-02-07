@@ -1,0 +1,111 @@
+@import 'src/assets/scss/argon';
+
+.bayesian-hypothese {
+  float: left;
+  height: 50px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.bayesian-container {
+  color : $darker;
+}
+
+
+.slide-container {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider-default::-webkit-slider-thumb {
+  background: $default; /* Green background */
+}
+
+.slider-default::-moz-range-thumb {
+  background:  $default; /* Green background */
+}
+
+
+.slider-primary::-webkit-slider-thumb {
+  background: $primary; /* Green background */
+}
+
+.slider-primary::-moz-range-thumb {
+  background:  $primary; /* Green background */
+}
+
+
+.slider-warning::-webkit-slider-thumb {
+  background: $warning; /* Green background */
+}
+
+.slider-warning::-moz-range-thumb {
+  background:  $warning; /* Green background */
+}
+
+
+.slider-danger::-webkit-slider-thumb {
+  background: $danger; /* Green background */
+}
+
+.slider-danger::-moz-range-thumb {
+  background:  $danger; /* Green background */
+}
+
+
+
+
+
+.slide-ticks-container{
+  width: 100%;
+}
+
+.slide-ticks-left{
+  float: left;
+  width : 20% ;
+}
+.slide-ticks-center{
+  float: left;
+  width : 60% ;
+  text-align: center;
+}
+.slide-ticks-right{
+  float: left;
+  width : 20% ;
+  text-align: right;
+}

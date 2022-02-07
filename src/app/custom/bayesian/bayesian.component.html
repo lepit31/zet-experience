@@ -6,15 +6,92 @@
             </div>
         </section>
         <section class="section section-sm ">
-                <div class="container py-lg-md d-flex">
-                    <div class="col px-0">
-                        <div class="row mt-4">
-                            <div class="col-sm-12  text-center">
-                                test
+            <div class="container py-lg-md d-flex">
+                <div class="col px-0">
+                    <div class="row mt-4">
+                        <div class="col-sm-12  text-center">
+                            <div class="bayesian-container">
+                                <div class="bayesian-hypothese bg-default" [style.width]="widthH0+'%'">h0
+                                </div>
+                                <div class="bayesian-hypothese bg-danger" [style.width]="widthH1+'%'">h1
+                                </div>
+                                <div class="bayesian-hypothese bg-primary" [style.width]="widthH2+'%'">h2
+                                </div>
+                                <div class="bayesian-hypothese bg-warning" [style.width]="widthH3+'%'">h3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-12 ">
+                            <div class="slide-container">
+                                <input type="range" min="0" max="100"   [(ngModel)]="valueH0" (ngModelChange)="resize()" step="5"
+                                       class="slider slider-default " >
+                                <div class="slide-ticks-container">
+                                    <span class="slide-ticks-left">Peu plausible</span>
+                                    <span class="slide-ticks-center">|</span>
+                                    <span class="slide-ticks-right">tres convainquant</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-sm-12 ">
+                            <div class="slide-container">
+                                <input type="range" min="0" max="100"  [(ngModel)]="valueH1"(ngModelChange)="resize()" step="5"
+                                       class="slider slider-danger " >
+                                <div class="slide-ticks-container">
+                                    <span class="slide-ticks-left">Peu plausible</span>
+                                    <span class="slide-ticks-center">|</span>
+                                    <span class="slide-ticks-right">tres convainquant</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-sm-12 ">
+                            <div class="slide-container">
+                                <input type="range" min="0" max="100"  [(ngModel)]="valueH2"(ngModelChange)="resize()" step="5"
+                                       class="slider slider-primary " >
+                                <div class="slide-ticks-container">
+                                    <span class="slide-ticks-left">Peu plausible</span>
+                                    <span class="slide-ticks-center">|</span>
+                                    <span class="slide-ticks-right">tres convainquant</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-sm-12 ">
+                            <div class="slide-container">
+                                <input type="range" min="0" max="100"  [(ngModel)]="valueH3"(ngModelChange)="resize()" step="5"
+                                       class="slider slider-warning " >
+                                <div class="slide-ticks-container">
+                                    <span class="slide-ticks-left">Peu plausible</span>
+                                    <span class="slide-ticks-center">|</span>
+                                    <span class="slide-ticks-right">tres convainquant</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-12  text-center">
+                            <div class="bayesian-container">
+                                <div class="bayesian-hypothese bg-default" [style.width]="newWidthH0+'%'">h0
+                                </div>
+                                <div class="bayesian-hypothese bg-danger" [style.width]="newWidthH1+'%'">h1
+                                </div>
+                                <div class="bayesian-hypothese bg-primary" [style.width]="newWidthH2+'%'">h2
+                                </div>
+                                <div class="bayesian-hypothese bg-warning" [style.width]="newWidthH3+'%'">h3
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
         <section class="section section-sm">
             <div class="container  d-flex">
@@ -28,9 +105,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ul>
-                               <li>Hygiène Mentale : <a href="https://www.youtube.com/watch?v=x-2uVNze56s&t=337s" target="_blank">Ep26 La Pensée Bayésienne</a>    </li>
-                                </ul>
-                           </div>
+                                <li>Hygiène Mentale : <a href="https://www.youtube.com/watch?v=x-2uVNze56s&t=337s"
+                                                         target="_blank">Ep26 La Pensée Bayésienne</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
