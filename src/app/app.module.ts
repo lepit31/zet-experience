@@ -23,6 +23,7 @@ import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
 import { MontyHallGameComponent } from './custom/monty-hall/monty-hall-game/monty-hall-game.component';
 import {CommonModule} from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {BayesianComponent} from './custom/bayesian/bayesian.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FeelingFutureComponent,
     ZernerComponent,
     MontyHallComponent,
-    MontyHallGameComponent
+    MontyHallGameComponent,
+    BayesianComponent
   ],
     imports: [
         BrowserModule,

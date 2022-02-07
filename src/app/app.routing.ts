@@ -12,6 +12,7 @@ import {FaqComponent} from './custom/faq/faq.component';
 import {FeelingFutureComponent} from './custom/feeling-future/feeling-future.component';
 import {ZernerComponent} from './custom/zener/zerner.component';
 import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
+import {BayesianComponent} from './custom/bayesian/bayesian.component';
 
 const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path: 'feeling-future', component: FeelingFutureComponent},
     {path: 'monty-hall', component: MontyHallComponent},
     {path: 'zener', component: ZernerComponent},
+    {path: 'bayesian', component: BayesianComponent},
     {path: 'login', component: LoginComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
