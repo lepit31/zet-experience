@@ -12,6 +12,10 @@
   color : $darker;
 }
 
+.bayesian-question {
+  font-weight: bold;
+  font-size: larger;
+}
 
 .slide-container {
   width: 100%; /* Width of the outside container */
@@ -97,15 +101,15 @@
 
 .slide-ticks-left{
   float: left;
-  width : 20% ;
+  width : 40% ;
 }
 .slide-ticks-center{
   float: left;
-  width : 60% ;
+  width : 20% ;
   text-align: center;
 }
 .slide-ticks-right{
   float: left;
-  width : 20% ;
+  width : 40% ;
   text-align: right;
 }

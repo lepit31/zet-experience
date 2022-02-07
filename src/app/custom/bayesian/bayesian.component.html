@@ -6,87 +6,245 @@
             </div>
         </section>
         <section class="section section-sm ">
-            <div class="container py-lg-md d-flex">
-                <div class="col px-0">
-                    <div class="row mt-4">
-                        <div class="col-sm-12  text-center">
-                            <div class="bayesian-container">
-                                <div class="bayesian-hypothese bg-default" [style.width]="widthH0+'%'">h0
-                                </div>
-                                <div class="bayesian-hypothese bg-danger" [style.width]="widthH1+'%'">h1
-                                </div>
-                                <div class="bayesian-hypothese bg-primary" [style.width]="widthH2+'%'">h2
-                                </div>
-                                <div class="bayesian-hypothese bg-warning" [style.width]="widthH3+'%'">h3
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="row mt-1">
+                            <div class="col-sm-12  text-center">
+                                <div class="bayesian-question">La vie dans l'univers</div>
+                                <div>Ma croyance initial</div>
+                                <div class="bayesian-container">
+                                    <div class="bayesian-hypothese bg-default" [style.width]="widthH0+'%'">h0
+                                    </div>
+                                    <div class="bayesian-hypothese bg-danger" [style.width]="widthH1+'%'">h1
+                                    </div>
+                                    <div class="bayesian-hypothese bg-primary" [style.width]="widthH2+'%'">h2
+                                    </div>
+                                    <div class="bayesian-hypothese bg-warning" [style.width]="widthH3+'%'">h3
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row mt-4">
-                        <div class="col-sm-12 ">
-                            <div class="slide-container">
-                                <input type="range" min="0" max="100"   [(ngModel)]="valueH0" (ngModelChange)="resize()" step="5"
-                                       class="slider slider-default " >
-                                <div class="slide-ticks-container">
-                                    <span class="slide-ticks-left">Peu plausible</span>
-                                    <span class="slide-ticks-center">|</span>
-                                    <span class="slide-ticks-right">tres convainquant</span>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H0 : Aucune vie en dehors de la terre</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH0"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-default ">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-sm-12 ">
-                            <div class="slide-container">
-                                <input type="range" min="0" max="100"  [(ngModel)]="valueH1"(ngModelChange)="resize()" step="5"
-                                       class="slider slider-danger " >
-                                <div class="slide-ticks-container">
-                                    <span class="slide-ticks-left">Peu plausible</span>
-                                    <span class="slide-ticks-center">|</span>
-                                    <span class="slide-ticks-right">tres convainquant</span>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H1 : Vie bacterienne dans l'univers</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH1"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-danger ">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-sm-12 ">
-                            <div class="slide-container">
-                                <input type="range" min="0" max="100"  [(ngModel)]="valueH2"(ngModelChange)="resize()" step="5"
-                                       class="slider slider-primary " >
-                                <div class="slide-ticks-container">
-                                    <span class="slide-ticks-left">Peu plausible</span>
-                                    <span class="slide-ticks-center">|</span>
-                                    <span class="slide-ticks-right">tres convainquant</span>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H2 : Vie intelligente mais hors de notre porté (Trop loin ou Spirituel)</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH2"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-primary ">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-sm-12 ">
-                            <div class="slide-container">
-                                <input type="range" min="0" max="100"  [(ngModel)]="valueH3"(ngModelChange)="resize()" step="5"
-                                       class="slider slider-warning " >
-                                <div class="slide-ticks-container">
-                                    <span class="slide-ticks-left">Peu plausible</span>
-                                    <span class="slide-ticks-center">|</span>
-                                    <span class="slide-ticks-right">tres convainquant</span>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H3 : Visité par des aliens</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH3"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-warning ">
+                                    <div class="slide-ticks-container">
+                                        <span class="slide-ticks-left">Peu plausible</span>
+                                        <span class="slide-ticks-center">|</span>
+                                        <span class="slide-ticks-right">tres convainquant</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row mt-4">
-                        <div class="col-sm-12  text-center">
-                            <div class="bayesian-container">
-                                <div class="bayesian-hypothese bg-default" [style.width]="newWidthH0+'%'">h0
+                        <div class="row mt-2">
+                            <div class="col-sm-12  text-center">
+                                <div class="bayesian-container">
+                                    <div class="bayesian-hypothese bg-default" [style.width]="newWidthH0+'%'">h0
+                                    </div>
+                                    <div class="bayesian-hypothese bg-danger" [style.width]="newWidthH1+'%'">h1
+                                    </div>
+                                    <div class="bayesian-hypothese bg-primary" [style.width]="newWidthH2+'%'">h2
+                                    </div>
+                                    <div class="bayesian-hypothese bg-warning" [style.width]="newWidthH3+'%'">h3
+                                    </div>
                                 </div>
-                                <div class="bayesian-hypothese bg-danger" [style.width]="newWidthH1+'%'">h1
+                                <div>Ma nouvelle croyance</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row mt-1">
+                            <div class="col-sm-12  text-center">
+                                <div class="bayesian-question">La vie dans l'univers</div>
+                                <div>Ma croyance initial</div>
+                                <div class="bayesian-container">
+                                    <div class="bayesian-hypothese bg-default" [style.width]="widthH0+'%'">h0
+                                    </div>
+                                    <div class="bayesian-hypothese bg-danger" [style.width]="widthH1+'%'">h1
+                                    </div>
+                                    <div class="bayesian-hypothese bg-primary" [style.width]="widthH2+'%'">h2
+                                    </div>
+                                    <div class="bayesian-hypothese bg-warning" [style.width]="widthH3+'%'">h3
+                                    </div>
                                 </div>
-                                <div class="bayesian-hypothese bg-primary" [style.width]="newWidthH2+'%'">h2
+                            </div>
+                        </div>
+
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H0 : Aucune vie en dehors de la terre</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH0"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-default ">
                                 </div>
-                                <div class="bayesian-hypothese bg-warning" [style.width]="newWidthH3+'%'">h3
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H1 : Vie bacterienne dans l'univers</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH1"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-danger ">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H2 : Vie intelligente mais hors de notre porté (Trop loin ou Spirituel)</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH2"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-primary ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H3 : Visité par des aliens</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH3"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-warning ">
+                                    <div class="slide-ticks-container">
+                                        <span class="slide-ticks-left">Peu plausible</span>
+                                        <span class="slide-ticks-center">|</span>
+                                        <span class="slide-ticks-right">tres convainquant</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-sm-12  text-center">
+                                <div class="bayesian-container">
+                                    <div class="bayesian-hypothese bg-default" [style.width]="newWidthH0+'%'">h0
+                                    </div>
+                                    <div class="bayesian-hypothese bg-danger" [style.width]="newWidthH1+'%'">h1
+                                    </div>
+                                    <div class="bayesian-hypothese bg-primary" [style.width]="newWidthH2+'%'">h2
+                                    </div>
+                                    <div class="bayesian-hypothese bg-warning" [style.width]="newWidthH3+'%'">h3
+                                    </div>
+                                </div>
+                                <div>Ma nouvelle croyance</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row mt-1">
+                            <div class="col-sm-12  text-center">
+                                <div class="bayesian-question">La vie dans l'univers</div>
+                                <div>Ma croyance initial</div>
+                                <div class="bayesian-container">
+                                    <div class="bayesian-hypothese bg-default" [style.width]="widthH0+'%'">h0
+                                    </div>
+                                    <div class="bayesian-hypothese bg-danger" [style.width]="widthH1+'%'">h1
+                                    </div>
+                                    <div class="bayesian-hypothese bg-primary" [style.width]="widthH2+'%'">h2
+                                    </div>
+                                    <div class="bayesian-hypothese bg-warning" [style.width]="widthH3+'%'">h3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H0 : Aucune vie en dehors de la terre</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH0"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-default ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H1 : Vie bacterienne dans l'univers</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH1"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-danger ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H2 : Vie intelligente mais hors de notre porté (Trop loin ou Spirituel)</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH2"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-primary ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-sm-12 ">
+                                <div>H3 : Visité par des aliens</div>
+                                <div class="slide-container">
+                                    <input type="range" min="0" max="100" [(ngModel)]="valueH3"
+                                           (ngModelChange)="resize()" step="5"
+                                           class="slider slider-warning ">
+                                    <div class="slide-ticks-container">
+                                        <span class="slide-ticks-left">Peu plausible</span>
+                                        <span class="slide-ticks-center">|</span>
+                                        <span class="slide-ticks-right">tres convainquant</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-sm-12  text-center">
+                                <div class="bayesian-container">
+                                    <div class="bayesian-hypothese bg-default" [style.width]="newWidthH0+'%'">h0
+                                    </div>
+                                    <div class="bayesian-hypothese bg-danger" [style.width]="newWidthH1+'%'">h1
+                                    </div>
+                                    <div class="bayesian-hypothese bg-primary" [style.width]="newWidthH2+'%'">h2
+                                    </div>
+                                    <div class="bayesian-hypothese bg-warning" [style.width]="newWidthH3+'%'">h3
+                                    </div>
+                                </div>
+                                <div>Ma nouvelle croyance</div>
                             </div>
                         </div>
                     </div>
