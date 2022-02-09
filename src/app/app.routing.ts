@@ -13,6 +13,7 @@ import {FeelingFutureComponent} from './custom/feeling-future/feeling-future.com
 import {ZernerComponent} from './custom/zener/zerner.component';
 import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
 import {BayesianComponent} from './custom/bayesian/bayesian.component';
+import {BayesianRoswellComponent} from './custom/bayesian-roswell/bayesian-roswell.component';
 
 const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
     {path: 'monty-hall', component: MontyHallComponent},
     {path: 'zener', component: ZernerComponent},
     {path: 'bayesian', component: BayesianComponent},
+    {path: 'bayesian-roswell', component: BayesianRoswellComponent},
     {path: 'login', component: LoginComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
