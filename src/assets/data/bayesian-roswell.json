@@ -1,0 +1,97 @@
+{
+  "profiles": [
+    {
+      "id": "Profil A",
+      "name": "Tenant",
+      "description": "Description du profil",
+      "subjects": [
+        {
+          "id": "sub0",
+          "name": "Les ET sont deja venu sur terre ?",
+          "hypotheses": [
+            {
+              "id": "sub0_h0",
+              "name": "H0 : non",
+              "value": 5
+            },
+            {
+              "id": "sub0_h2",
+              "name": "H1 : Oui mais on nous cache les preuves ",
+              "value": 15
+            },
+            {
+              "id": "sub0_h3",
+              "name": "H1 : oui et on as des preuves vérifiable ",
+              "value": 80
+            }
+          ]
+        },
+        {
+          "id": "sub1",
+          "name": "Que représente la photo ?",
+          "hypotheses": [
+            {
+              "id": "sub1_h0",
+              "name": "H0 : Ce n'est pas un ET",
+              "value": 20
+            },
+            {
+              "id": "sub1_h1",
+              "name": "H1 : c'est un ET ",
+              "value": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Profil B",
+      "name": "Sceptique",
+      "description": "Description du profil2",
+      "subjects": [
+        {
+          "id": "sub1",
+          "name": "Que represente la photo ?",
+          "hypotheses": [
+            {
+              "id": "sub1_h0",
+              "name": "H0 : une momie dans musée",
+              "value": 40
+            },
+            {
+              "id": "sub1_h1",
+              "name": "H1 : un fake",
+              "value": 50
+            },
+            {
+              "id": "sub1_h2",
+              "name": "H2 : une forme de vie non connu par la science",
+              "value": 5
+            },
+            {
+              "id": "sub1_h3",
+              "name": "H3 : un ET",
+              "value": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "storie1",
+      "name": "les Diapositives de Roswell",
+      "steps": [
+        " Presentation cadre de la decouverte",
+        " Presentation de la photo",
+        " Resemblance physique",
+        " Montant métaliques",
+        " etiquesttes",
+        " carelage",
+        " banc",
+        " Panneau déflouté"
+      ]
+    }
+  ]
+}

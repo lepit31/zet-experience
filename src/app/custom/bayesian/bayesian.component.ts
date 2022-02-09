@@ -1,4 +1,11 @@
 import {Component, OnInit} from '@angular/core';
+import {BayesianStorieModel} from './bayesian-storie.model';
+import {BayesianProfileModel} from './bayesian-profile.model';
+import {BayesianModel} from './bayesian.model';
+import {BayesianSubjectModel} from './bayesian-subject.model';
+import {BayesianHypothesisModel} from './bayesian-hypothesis.model';
+import {BayesianService} from './bayesian.service';
+import {HttpResponse} from '@angular/common/http';
 
 @Component({
     selector: 'app-bayesian',
@@ -21,11 +28,56 @@ export class BayesianComponent implements OnInit {
     newWidthH1 = 25;
     newWidthH2 = 25;
     newWidthH3 = 25;
+    bayesian = new BayesianModel();
+    profile = new BayesianProfileModel();
+    storie = new BayesianStorieModel();
+    subject = new BayesianSubjectModel();
+    hypothesis = new BayesianHypothesisModel();
+    debug = '';
 
-    constructor() {
+    constructor(private bayesianService: BayesianService) {
     }
 
     ngOnInit() {
+        /*
+                this.hypothesis.id = 'sub1_h0';
+                this.hypothesis.name = 'H0 : une momie';
+                this.hypothesis.value = 20;
+
+                this.subject.id = 'sub1';
+                this.subject.name = 'Que represente la photo ?';
+                this.subject.hypotheses = [this.hypothesis];
+
+                this.profile.id = 'Profil A';
+                this.profile.name = 'Tenant';
+                this.profile.description = 'Description du profil';
+                this.profile.subjects = [this.subject];
+
+                this.storie.id = 'storie1';
+                this.storie.name = 'les Diapositives de Roswell';
+                this.storie.steps = [
+                    ' Presentation cadre de la decouverte',
+                    ' Presentation de la photo',
+                    ' Resemblance physique',
+                    ' Montant métaliques',
+                    ' etiquesttes',
+                    ' carelage',
+                    ' banc',
+                    ' Panneau déflouté'
+                ];
+
+                this.baye.profiles = [this.profile];
+                this.baye.stories = [this.storie];
+        */
+        this.bayesianService.getData('assets/data/bayesian-roswell.json').subscribe(
+            (response: HttpResponse<BayesianModel>) => {
+                this.bayesian = response.body;
+                this.debug = JSON.stringify(this.bayesian);
+            }
+            , () => {
+                this.debug = 'errror';
+            }
+        );
     }
 
     resize(): any {
