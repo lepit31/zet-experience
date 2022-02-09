@@ -12,6 +12,7 @@ import {BayesianModel} from '../bayesian/bayesian.model';
 export class BayesianRoswellComponent implements OnInit {
 
     debug = '';
+    bayes : BayesianModel;
 
     constructor(private bayesianService: BayesianService) {
     }
@@ -50,6 +51,7 @@ export class BayesianRoswellComponent implements OnInit {
         this.bayesianService.getData('assets/data/bayesian-roswell.json').subscribe(
             (response: HttpResponse<BayesianModel>) => {
                 this.debug = JSON.stringify(response.body);
+                this.bayes = response.body;
             }
             , () => {
                 this.debug = 'error';
