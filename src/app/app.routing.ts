@@ -12,8 +12,7 @@ import {FaqComponent} from './custom/faq/faq.component';
 import {FeelingFutureComponent} from './custom/feeling-future/feeling-future.component';
 import {ZernerComponent} from './custom/zener/zerner.component';
 import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
-import {BayesianComponent} from './custom/bayesian/bayesian.component';
-import {BayesianRoswellComponent} from './custom/bayesian-roswell/bayesian-roswell.component';
+import {BayesianPageComponent} from './custom/bayesian-page/bayesian-page.component';
 
 const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -24,8 +23,7 @@ const routes: Routes = [
     {path: 'feeling-future', component: FeelingFutureComponent},
     {path: 'monty-hall', component: MontyHallComponent},
     {path: 'zener', component: ZernerComponent},
-    {path: 'bayesian', component: BayesianComponent},
-    {path: 'bayesian-roswell', component: BayesianRoswellComponent},
+    {path: 'bayesian', component: BayesianPageComponent},
     {path: 'login', component: LoginComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];

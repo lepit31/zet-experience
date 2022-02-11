@@ -1,0 +1,99 @@
+<main>
+    <div class="position-relative">
+        <!-- shape Hero -->
+        <section class="section section-shaped pb-0">
+            <div class="shape shape-style-1 shape-default">
+            </div>
+        </section>
+        <section class="section section-sm " *ngIf="currentStorie != null">
+            <div class="container-fluid">
+                <div class="row">
+                    <div  *ngFor="let subject of currentProfile.subjects" [class]="getBayesianClass()">
+                        <app-bayesian [subject]="subject"></app-bayesian>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm " *ngIf="bayes != null">
+                        <div class="row ">
+                            <div class="col-sm-3 offset-1 baysian-storie-height">
+                                <div>
+                                    <label for="select-storie" class="form-label"> Histoire :
+                                    </label>
+                                </div>
+                                <div>
+                                    <select id="select-storie" class="form-select" [(ngModel)]="currentStorie" (change)="onChangeStorie()">
+                                        <option *ngFor="let storie of bayes.stories" [ngValue]="storie">{{storie.name}}</option>
+                                    </select>
+                                </div>
+                                <div>
+
+                                    <label for="select-profile" class="form-label"> Profil :
+                                    </label>
+                                </div>
+                                <div>
+                                    <select id="select-profile" class="form-select" [(ngModel)]="currentProfile">
+                                        <option *ngFor="let profile of currentStorie.profiles" [ngValue]="profile">{{profile.name}}</option>
+                                    </select>
+                                </div>
+                                <div>
+
+                                    <label class="form-label"> Description du profil :
+                                    </label>
+                                </div>
+                                <div>
+                                    {{currentProfile.description}}
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6 baysian-storie-step">
+                                {{currentStorie.steps[step-1]}}
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                                lll<br>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <ngb-pagination [collectionSize]="currentStorie.steps.length" [(page)]="step" [pageSize]="1" [maxSize]="5" [rotate]="true" [ellipses]="false" >
+                                <ng-template ngbPaginationPrevious><i _ngcontent-c9="" class="fa fa-angle-left"></i>
+                                </ng-template>
+                                <ng-template ngbPaginationNext><i _ngcontent-c9="" class="fa fa-angle-right"></i></ng-template>
+                            </ngb-pagination>
+                        </div>
+        </section>
+        <section class="section section-sm">
+            <div class="container  d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4> Credit :</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul>
+                                <li>Hygiène Mentale : <a href="https://www.youtube.com/watch?v=x-2uVNze56s&t=337s"
+                                                         target="_blank">Ep26 La Pensée Bayésienne</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
