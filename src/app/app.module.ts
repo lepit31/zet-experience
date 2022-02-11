@@ -25,6 +25,7 @@ import {CommonModule} from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {BayesianComponent} from './custom/bayesian/bayesian.component';
 import {BayesianPageComponent} from './custom/bayesian-page/bayesian-page.component';
+import {SectionsModule} from './sections/sections.module';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {BayesianPageComponent} from './custom/bayesian-page/bayesian-page.compon
         HttpClientModule,
         ReactiveFormsModule,
         CommonModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        SectionsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

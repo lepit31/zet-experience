@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LandingComponent implements OnInit {
-  focus: any;
-  focus1: any;
+    model = {
+        left: true,
+        middle: false,
+        right: false
+    };
+
+    focus;
+    focus1;
 
   constructor() { }
 
