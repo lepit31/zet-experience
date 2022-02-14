@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MontyHallDoorModel} from './monty-hall-door.model';
+import {MontyHallDoorModel} from '../monty-hall-model/monty-hall-door.model';
 
 import { faSync } from '@fortawesome/free-solid-svg-icons';
 

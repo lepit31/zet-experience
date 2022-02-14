@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BayesianSubjectModel} from '../bayesian-subject.model';
+import {BayesianSubjectModel} from '../bayesian-model/bayesian-subject.model';
 
 @Component({
     selector: 'app-bayesian-graph',

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {FeelingFutureResponseModel} from './feeling-future-response.model';
+import {FeelingFutureResponseModel} from './feeling-futur-model/feeling-future-response.model';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpResponse} from '@angular/common/http';
-import {FeelingFutureRequestModel} from './feeling-future-request.model';
-import {FeelingFutureStatisticModel} from './feeling-future-statistic.model';
+import {FeelingFutureRequestModel} from './feeling-futur-model/feeling-future-request.model';
+import {FeelingFutureStatisticModel} from './feeling-futur-model/feeling-future-statistic.model';
 
 @Injectable({
     providedIn: 'root'

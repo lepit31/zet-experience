@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {BayesianService} from './bayesian.service';
 import {HttpResponse} from '@angular/common/http';
-import {BayesianModel} from './bayesian.model';
-import {BayesianStorieModel} from './bayesian-storie.model';
-import {BayesianProfileModel} from './bayesian-profile.model';
+import {BayesianModel} from './bayesian-model/bayesian.model';
+import {BayesianStorieModel} from './bayesian-model/bayesian-storie.model';
+import {BayesianProfileModel} from './bayesian-model/bayesian-profile.model';
 
 @Component({
     selector: 'app-bayesian-page',

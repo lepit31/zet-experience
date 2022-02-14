@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {FeelingFutureRequestModel} from './feeling-future-request.model';
+import {FeelingFutureRequestModel} from './feeling-futur-model/feeling-future-request.model';
 import {FeelingFutureService} from './feeling-future.service';
-import {FeelingFutureResponseModel} from './feeling-future-response.model';
+import {FeelingFutureResponseModel} from './feeling-futur-model/feeling-future-response.model';
 import {HttpResponse} from '@angular/common/http';
-import {FeelingFutureStatisticModel} from './feeling-future-statistic.model';
+import {FeelingFutureStatisticModel} from './feeling-futur-model/feeling-future-statistic.model';
 
 @Component({
     selector: 'app-feeling-futur',
