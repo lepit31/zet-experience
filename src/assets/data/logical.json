@@ -1,0 +1,84 @@
+{
+  "stories": [
+    {
+      "ruleDescription": "rule 1",
+      "name": "bob",
+      "tries": [
+        {
+          "rule": "CONFIRM",
+          "facts": [
+            {
+              "id": "A->X",
+              "rule": "CONFIRM",
+              "head": "figure.png",
+              "headTooltip": "Une carte avec une figure",
+              "tail": "clubcard.png",
+              "tailTooltip": "Une carte de Trefle"
+            },
+            {
+              "id": "Non A-> Non X",
+              "rule": "NONE",
+              "head": "nofigure.png",
+              "headTooltip": "Une carte sans figure ",
+              "tail": "clubcard.png",
+              "tailTooltip": "Une carte de Trefle"
+            },
+            {
+              "id": "X->A",
+              "rule": "NONE",
+              "head": "clubcard.png",
+              "headTooltip": "Une carte de Trefle",
+              "tail": "nofigure.png",
+              "tailTooltip": "Une carte sans figure "
+            },
+            {
+              "id": "Non X -> Non A",
+              "rule": "CONFIRM",
+              "head": "noclubcard.png",
+              "headTooltip": "Une carte de Coeur",
+              "tail": "nofigure.png",
+              "tailTooltip": "Une carte sans figure"
+            }
+          ]
+        },
+        {
+          "rule": "REFUTE",
+          "facts": [
+            {
+              "id": "A->X",
+              "rule": "CONFIRM",
+              "head": "figure.png",
+              "headTooltip": "Une carte avec une figure",
+              "tail": "clubcard.png",
+              "tailTooltip": "Une carte de Trefle"
+            },
+            {
+              "id": "Non A-> Non X",
+              "rule": "NONE",
+              "head": "nofigure.png",
+              "headTooltip": "Une carte sans figure ",
+              "tail": "clubcard.png",
+              "tailTooltip": "Une carte de Trefle"
+            },
+            {
+              "id": "X->A",
+              "rule": "NONE",
+              "head": "clubcard.png",
+              "headTooltip": "Une carte de Trefle",
+              "tail": "nofigure.png",
+              "tailTooltip": "Une carte sans figure "
+            },
+            {
+              "id": "Non X -> Non A",
+              "rule": "REFUTE",
+              "head": "noclubcard.png",
+              "headTooltip": "Une carte de Coeur",
+              "tail": "figure.png",
+              "tailTooltip": "Une carte avec une figure"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
