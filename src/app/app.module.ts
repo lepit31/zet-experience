@@ -26,6 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {BayesianGraphComponent} from './custom/bayesian-page/bayesian-graph/bayesian-graph.component';
 import {BayesianPageComponent} from './custom/bayesian-page/bayesian-page.component';
 import {SectionsModule} from './sections/sections.module';
+import { LogicalComponent } from './custom/logical/logical.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {SectionsModule} from './sections/sections.module';
     MontyHallComponent,
     MontyHallGameComponent,
     BayesianGraphComponent,
-    BayesianPageComponent
+    BayesianPageComponent,
+    LogicalComponent
   ],
     imports: [
         BrowserModule,
