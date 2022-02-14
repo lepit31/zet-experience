@@ -1,13 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BayesianSubjectModel} from './bayesian-subject.model';
+import {BayesianSubjectModel} from '../bayesian-subject.model';
 
 @Component({
-    selector: 'app-bayesian',
-    templateUrl: './bayesian.component.html',
-    styleUrls: ['./bayesian.component.scss']
+    selector: 'app-bayesian-graph',
+    templateUrl: './bayesian-graph.component.html',
+    styleUrls: ['./bayesian-graph.component.scss']
 })
 
-export class BayesianComponent implements OnInit {
+export class BayesianGraphComponent implements OnInit {
 
     @Input() subject!: BayesianSubjectModel;
 

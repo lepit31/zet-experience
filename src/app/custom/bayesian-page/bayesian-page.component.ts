@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {BayesianService} from '../bayesian/bayesian.service';
+import {BayesianService} from './bayesian.service';
 import {HttpResponse} from '@angular/common/http';
-import {BayesianModel} from '../bayesian/bayesian.model';
-import {BayesianStorieModel} from '../bayesian/bayesian-storie.model';
-import {BayesianProfileModel} from '../bayesian/bayesian-profile.model';
+import {BayesianModel} from './bayesian.model';
+import {BayesianStorieModel} from './bayesian-storie.model';
+import {BayesianProfileModel} from './bayesian-profile.model';
 
 @Component({
     selector: 'app-bayesian-page',
@@ -24,7 +24,7 @@ export class BayesianPageComponent implements OnInit {
 
     ngOnInit() {
 
-        this.bayesianService.getData('assets/data/bayesian-roswell.json').subscribe(
+        this.bayesianService.getData('assets/data/bayesian.json').subscribe(
             (response: HttpResponse<BayesianModel>) => {
                 this.debug = JSON.stringify(response.body);
                 this.bayes = response.body;

@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div  *ngFor="let subject of currentProfile.subjects" [class]="getBayesianClass()">
-                        <app-bayesian [subject]="subject"></app-bayesian>
+                        <app-bayesian-graph [subject]="subject"></app-bayesian-graph>
                     </div>
                 </div>
             </div>

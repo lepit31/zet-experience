@@ -23,7 +23,7 @@ import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
 import { MontyHallGameComponent } from './custom/monty-hall/monty-hall-game/monty-hall-game.component';
 import {CommonModule} from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {BayesianComponent} from './custom/bayesian/bayesian.component';
+import {BayesianGraphComponent} from './custom/bayesian-page/bayesian-graph/bayesian-graph.component';
 import {BayesianPageComponent} from './custom/bayesian-page/bayesian-page.component';
 import {SectionsModule} from './sections/sections.module';
 
@@ -41,7 +41,7 @@ import {SectionsModule} from './sections/sections.module';
     ZernerComponent,
     MontyHallComponent,
     MontyHallGameComponent,
-    BayesianComponent,
+    BayesianGraphComponent,
     BayesianPageComponent
   ],
     imports: [
