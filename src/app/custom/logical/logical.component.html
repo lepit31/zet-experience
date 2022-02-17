@@ -41,7 +41,7 @@
                             </label>
                         </div>
                         <div>
-                            <select id="select-storie" class="form-select" [(ngModel)]="currentStorie" (change)="onChangeStorie()">
+                            <select id="select-storie" class="form-select" [(ngModel)]="currentStorie" >
                                 <option *ngFor="let storie of logicalModel.stories" [ngValue]="storie">{{storie.name}}</option>
                             </select>
                         </div>
