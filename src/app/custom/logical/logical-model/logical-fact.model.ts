@@ -7,6 +7,7 @@ export class LogicalFactModel {
     public tailTooltip: string;
     // can be CONFIRM REFUTE NONE
     public rule: string;
+    public verified: boolean;
 
 
     constructor() {

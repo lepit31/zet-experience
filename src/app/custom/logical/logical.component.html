@@ -9,58 +9,58 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-8 offset-1">
-                        <div class="row text-center" >
-                            <div class="col-sm-3">
-                                <img src="assets/img/logical/figure.png" alt="figure"  ngbTooltip="figure">
-                            </div>
-                            <div class="col-sm-3">
-                                <img src="assets/img/logical/nofigure.png" alt="figure">
-                            </div>
-                            <div class="col-sm-3">
-                                <img src="assets/img/logical/cardclub.png" alt="figure">
-                            </div>
-                            <div class="col-sm-3">
-                                <img src="assets/img/logical/nocardclub.png" alt="figure">
-                            </div>
-                        </div>
-                        <div class="row text-center mt-2 mb-2">
-                            <div class="col-sm-3">
-                                <div class="btn btn-primary">verifier</div>
-                            </div>
-                            <div class="col-sm-3 ">
-                                <div class="btn btn-primary">verifier</div>
-                            </div>
-                            <div class="col-sm-3 ">
-                                <div class="btn btn-primary">verifier</div>
-                            </div>
-                            <div class="col-sm-3 ">
-                                <div class="btn btn-primary">verifier</div>
-                            </div>
+                        <div *ngIf="currentStorie != null">
 
-                        </div>
-                        <div class="row text-center">
-                            <div class="col-sm-3">
-                                <img src="assets/img/logical/unknow.png" alt="figure">
+                            <div class="row text-center">
+                                <div class="col-sm-3" *ngFor="let fact of  currentStorie.facts">
+                                    <img [src]="'assets/img/logical/'+ fact.head" alt="figure"
+                                         [ngbTooltip]="fact.headTooltip">
+                                </div>
                             </div>
-                            <div class="col-sm-3">
-                                <img src="assets/img/logical/nofigure.png" alt="figure">
+                            <div class="row text-center mt-2 mb-2">
+                                <div class="col-sm-3" *ngFor="let fact of  currentStorie.facts; let index = index">
+                                    <div class="btn btn-primary" (click)="verifyFact(index)">verifier</div>
+                                </div>
                             </div>
-                            <div class="col-sm-3">
-                                <img src="assets/img/logical/cardclub.png" alt="figure">
-                            </div>
-                            <div class="col-sm-3">
-                                <img src="assets/img/logical/nocardclub.png" alt="figure">
+                            <div class="row text-center">
+                                <div class="col-sm-3" *ngFor="let fact of  currentStorie.facts">
+                                    <div *ngIf="!fact.verified">
+                                        <img src="assets/img/logical/unknow.png" alt="figure" ngbTooltip="non verifier">
+                                    </div>
+                                    <div *ngIf="fact.verified">
+                                        <img [src]="'assets/img/logical/'+ fact.tail" alt="figure"
+                                             [ngbTooltip]="fact.tailTooltip">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-3">
-                        <div>histoire</div>
-                        <div>regle</div>
                         <div>
-                            En vert  : Confirme la regle <br>
+                            <label for="select-storie" class="form-label"> Histoire :
+                            </label>
+                        </div>
+                        <div>
+                            <select id="select-storie" class="form-select" [(ngModel)]="currentStorie" (change)="onChangeStorie()">
+                                <option *ngFor="let storie of logicalModel.stories" [ngValue]="storie">{{storie.name}}</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label   class="form-label"> Regle :
+                            </label> </div>
+                        <div>
+                            {{currentStorie.ruleDescription}}
+                        </div>
+                        <div>
+                            Seul 2 verification sont nécessaire pour confimer ou refuté la regle<br>
+                            En vert : Confirme la regle <br>
                             En rouge : Refute la regle <br>
-                            En jaune : Aucun effet sur la regle</div>
-                        <div>{{debug}}</div>
+                            En jaune : Aucun effet sur la regle
+                        </div>
+                        <div>
+                            <div class="float-left btn btn-danger">Refute la regle</div>
+                            <div class="float-right btn btn-success">Confirme la regle</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,8 +77,14 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ul>
-                                <li>Hygiène Mentale : <a href="https://www.youtube.com/watch?v=pyj6ysoUBNw&ab_channel=Hygi%C3%A8neMentale" target="_blank">Ep13 Comment Tester le Paranormal avec la Science ? (Les cartes de Zener)</a>    </li>
-                                <li> Carte zener par Mikhail Ryazanov (talk) 01:30, 1 April 2014 (UTC) — File:Cartas Zener.svg + File:Zenerkarten c.jpg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=31927664</li>
+                                <li>Hygiène Mentale : <a
+                                        href="https://www.youtube.com/watch?v=pyj6ysoUBNw&ab_channel=Hygi%C3%A8neMentale"
+                                        target="_blank">Ep13 Comment Tester le Paranormal avec la Science ? (Les cartes
+                                    de Zener)</a></li>
+                                <li> Carte zener par Mikhail Ryazanov (talk) 01:30, 1 April 2014 (UTC) — File:Cartas
+                                    Zener.svg + File:Zenerkarten c.jpg, CC BY-SA 3.0,
+                                    https://commons.wikimedia.org/w/index.php?curid=31927664
+                                </li>
                             </ul>
                         </div>
                     </div>

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {LogicalModel} from './logical-model/logical.model';
 import {HttpResponse} from '@angular/common/http';
 import {LogicalService} from './logical.service';
+import {LogicalStorieModel} from './logical-model/logical-storie.model';
 
 @Component({
     selector: 'app-logical',
@@ -13,19 +14,24 @@ export class LogicalComponent implements OnInit {
     constructor(private logicalService: LogicalService) {
     }
 
-    debug = '';
+    logicalModel: LogicalModel;
+    currentStorie: LogicalStorieModel;
 
     ngOnInit(): void {
 
         this.logicalService.getData('assets/data/logical.json').subscribe(
             (response: HttpResponse<LogicalModel>) => {
-                this.debug = JSON.stringify(response.body);
+                this.logicalModel = response.body;
+                this.currentStorie = this.logicalModel.stories[0];
             }
             , () => {
-                this.debug = 'error';
             }
         );
 
+    }
+
+    verifyFact(index: number) {
+        this.currentStorie.facts[index].verified = true;
     }
 
 }
