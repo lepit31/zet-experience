@@ -1,11 +1,12 @@
-import {LogicalTryModel} from './logical-try.model';
+import {LogicalFactModel} from './logical-fact.model';
 
 export class LogicalStorieModel {
 
 
     public name: string;
-    public ruleDescription: string;
-    public tries: LogicalTryModel[];
+    // can be CONFIRM REFUTE
+    public rule: string;
+    public facts: LogicalFactModel[];
 
 
     constructor() {
