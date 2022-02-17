@@ -3,6 +3,7 @@ import {LogicalModel} from './logical-model/logical.model';
 import {HttpResponse} from '@angular/common/http';
 import {LogicalService} from './logical.service';
 import {LogicalStorieModel} from './logical-model/logical-storie.model';
+import {LogicalFactModel} from './logical-model/logical-fact.model';
 
 @Component({
     selector: 'app-logical',
@@ -16,6 +17,7 @@ export class LogicalComponent implements OnInit {
 
     logicalModel: LogicalModel;
     currentStorie: LogicalStorieModel;
+    currentChoice = '';
 
     ngOnInit(): void {
 
@@ -34,4 +36,26 @@ export class LogicalComponent implements OnInit {
         this.currentStorie.facts[index].verified = true;
     }
 
+    selectChoice(choice: string) {
+        this.currentChoice = choice;
+    }
+
+    changeStorie() {
+        this.currentChoice = '';
+    }
+
+    getFactClass(fact: LogicalFactModel) {
+        if (fact.verified && this.currentChoice != '') {
+            if (fact.rule === 'CONFIRM') {
+                return 'bg-success';
+            }
+            if (fact.rule === 'REFUTE') {
+                return 'bg-danger';
+            }
+            if (fact.rule === 'NONE') {
+                return 'bg-warning';
+            }
+        }
+        return '';
+    }
 }
