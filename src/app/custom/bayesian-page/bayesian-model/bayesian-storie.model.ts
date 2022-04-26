@@ -1,10 +1,12 @@
-import {BayesianProfileModel} from './bayesian-profile.model';
+import {BayesianHypothesisModel} from './bayesian-hypothesis.model';
 
 export class BayesianStorieModel {
     public id: string;
     public name: string;
-    public steps: string[];
-    public profiles: BayesianProfileModel[];
+    public link: string;
+    public description: string;
+    public question: string;
+    public hypotheses: BayesianHypothesisModel[];
 
     constructor() {
     }

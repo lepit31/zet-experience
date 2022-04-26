@@ -3,7 +3,6 @@ import {BayesianService} from './bayesian.service';
 import {HttpResponse} from '@angular/common/http';
 import {BayesianModel} from './bayesian-model/bayesian.model';
 import {BayesianStorieModel} from './bayesian-model/bayesian-storie.model';
-import {BayesianProfileModel} from './bayesian-model/bayesian-profile.model';
 
 @Component({
     selector: 'app-bayesian-page',
@@ -16,7 +15,6 @@ export class BayesianPageComponent implements OnInit {
     debug = '';
     bayes: BayesianModel;
     currentStorie: BayesianStorieModel;
-    currentProfile: BayesianProfileModel;
     step = 1;
 
     constructor(private bayesianService: BayesianService) {
@@ -29,7 +27,6 @@ export class BayesianPageComponent implements OnInit {
                 this.debug = JSON.stringify(response.body);
                 this.bayes = response.body;
                 this.currentStorie = this.bayes.stories[0];
-                this.currentProfile = this.currentStorie.profiles[0];
             }
             , () => {
                 this.debug = 'error';
@@ -37,26 +34,5 @@ export class BayesianPageComponent implements OnInit {
         );
     }
 
-    onChangeStorie() {
-        this.currentProfile = this.currentStorie.profiles[0];
-        this.step = 1;
-    }
 
-    getBayesianClass() {
-        if (this.currentProfile != null) {
-            if (this.currentProfile.subjects.length === 1) {
-                return 'col-sm-4 offset-4';
-            }
-            if (this.currentProfile.subjects.length === 2) {
-                return 'col-sm-4 offset-1';
-            }
-            if (this.currentProfile.subjects.length === 3) {
-                return 'col-sm-4';
-            }
-            if (this.currentProfile.subjects.length >= 4) {
-                return 'col-sm-3';
-            }
-        }
-        return 'col-sm-12';
-    }
 }

@@ -2,240 +2,177 @@
   "stories": [
     {
       "id": "storie1",
-      "name": "les Diapositives de Roswell",
-      "profiles": [
+      "name": "les Diapositives de Roswell - coté sceptique",
+      "link": "https://www.youtube.com/watch?v=oniJv4raglM&ab_channel=Hygi%C3%A8neMentale",
+      "description": "Le cas des \"Diapositives de Roswell\" a été présenté comme une preuve irréfutable de la présence extraterrestre sur Terre",
+      "question": "Que représente la diapositive ?",
+      "hypotheses": [
         {
-          "id": "Profil A",
-          "name": "Tenant",
-          "description": "Description du profil",
-          "subjects": [
-            {
-              "id": "sub0",
-              "name": "Les ET sont deja venu sur terre ?",
-              "hypotheses": [
-                {
-                  "id": "sub0_h0",
-                  "name": "H0 : non",
-                  "value": 5
-                },
-                {
-                  "id": "sub0_h2",
-                  "name": "H1 : Oui mais on nous cache les preuves ",
-                  "value": 15
-                },
-                {
-                  "id": "sub0_h3",
-                  "name": "H1 : oui et on as des preuves vérifiable ",
-                  "value": 80
-                }
-              ]
-            },
-            {
-              "id": "sub1",
-              "name": "Que représente la photo ?",
-              "hypotheses": [
-                {
-                  "id": "sub1_h0",
-                  "name": "H0 : Ce n'est pas un ET",
-                  "value": 20
-                },
-                {
-                  "id": "sub1_h1",
-                  "name": "H1 : c'est un ET ",
-                  "value": 80
-                }
-              ]
-            }
-          ]
+          "id": "sub1_h0",
+          "name": "H0 : une explication prosaique (ex :momie) ",
+          "value": 40
         },
         {
-          "id": "Profil B",
-          "name": "Sceptique",
-          "description": "Description du profil2",
-          "subjects": [
-            {
-              "id": "sub1",
-              "name": "Que represente la photo ?",
-              "hypotheses": [
-                {
-                  "id": "sub1_h0",
-                  "name": "H0 : une momie dans musée",
-                  "value": 40
-                },
-                {
-                  "id": "sub1_h1",
-                  "name": "H1 : un fake",
-                  "value": 50
-                },
-                {
-                  "id": "sub1_h2",
-                  "name": "H2 : une forme de vie non connu par la science",
-                  "value": 5
-                },
-                {
-                  "id": "sub1_h3",
-                  "name": "H3 : un ET",
-                  "value": 5
-                }
-              ]
-            }
-          ]
+          "id": "sub1_h1",
+          "name": "H1 : un fake",
+          "value": 50
+        },
+        {
+          "id": "sub1_h2",
+          "name": "H2 : une forme de vie terrestre non connu par la science",
+          "value": 5
+        },
+        {
+          "id": "sub1_h3",
+          "name": "H3 : un ET",
+          "value": 5
         }
-      ],
-      "steps": [
-        " Presentation cadre de la decouverte",
-        " Presentation de la photo",
-        " Resemblance physique",
-        " Montant métaliques",
-        " etiquesttes",
-        " carelage",
-        " banc",
-        " Panneau déflouté"
       ]
     },
     {
       "id": "storie2",
-      "name": "Pan 1",
-      "profiles": [
+      "name": "les Diapositives de Roswell - coté tenant",
+      "link": "https://www.youtube.com/watch?v=oniJv4raglM&ab_channel=Hygi%C3%A8neMentale",
+      "description": "Le cas des \"Diapositives de Roswell\" a été présenté comme une preuve irréfutable de la présence extraterrestre sur Terre",
+      "question": "Que représente la diapositive ?",
+      "hypotheses": [
         {
-          "id": "Profil A",
-          "name": "ffffffff",
-          "description": "Description du profifffffffdfl",
-          "subjects": [
-            {
-              "id": "sub0",
-              "name": "Les ET sont deja venu sur terre ?",
-              "hypotheses": [
-                {
-                  "id": "sub0_h0",
-                  "name": "H0 : non",
-                  "value": 5
-                },
-                {
-                  "id": "sub0_h2",
-                  "name": "H1 : Oui mais on nous cache les preuves ",
-                  "value": 15
-                },
-                {
-                  "id": "sub0_h3",
-                  "name": "H1 : oui et on as des preuves vérifiable ",
-                  "value": 80
-                }
-              ]
-            },
-            {
-              "id": "sub1",
-              "name": "Que représente la photo ?",
-              "hypotheses": [
-                {
-                  "id": "sub1_h0",
-                  "name": "H0 : Ce n'est pas un ET",
-                  "value": 20
-                },
-                {
-                  "id": "sub1_h1",
-                  "name": "H1 : c'est un ET ",
-                  "value": 80
-                }
-              ]
-            }
-          ]
+          "id": "sub1_h0",
+          "name": "H0 : une explication prosaique (ex :momie) ",
+          "value": 5
         },
         {
-          "id": "Profil B",
-          "name": "ddddddddd",
-          "description": "Description du profilddddddd",
-          "subjects": [
-            {
-              "id": "sub1",
-              "name": "Que represente la photo ?",
-              "hypotheses": [
-                {
-                  "id": "sub1_h0",
-                  "name": "H0 : une momie dans musée",
-                  "value": 40
-                },
-                {
-                  "id": "sub1_h1",
-                  "name": "H1 : un fake",
-                  "value": 50
-                },
-                {
-                  "id": "sub1_h2",
-                  "name": "H2 : une forme de vie non connu par la science",
-                  "value": 5
-                },
-                {
-                  "id": "sub1_h3",
-                  "name": "H3 : un ET",
-                  "value": 5
-                }
-              ]
-            },
-            {
-              "id": "sub1",
-              "name": "Que represente la photo ?",
-              "hypotheses": [
-                {
-                  "id": "sub1_h0",
-                  "name": "H0 : une momie dans musée",
-                  "value": 40
-                },
-                {
-                  "id": "sub1_h1",
-                  "name": "H1 : un fake",
-                  "value": 50
-                },
-                {
-                  "id": "sub1_h2",
-                  "name": "H2 : une forme de vie non connu par la science",
-                  "value": 5
-                },
-                {
-                  "id": "sub1_h3",
-                  "name": "H3 : un ET",
-                  "value": 5
-                }
-              ]
-            },
-            {
-              "id": "sub1",
-              "name": "Que represente la photo ?",
-              "hypotheses": [
-                {
-                  "id": "sub1_h0",
-                  "name": "H0 : une momie dans musée",
-                  "value": 40
-                },
-                {
-                  "id": "sub1_h1",
-                  "name": "H1 : un fake",
-                  "value": 50
-                },
-                {
-                  "id": "sub1_h2",
-                  "name": "H2 : une forme de vie non connu par la science",
-                  "value": 5
-                },
-                {
-                  "id": "sub1_h3",
-                  "name": "H3 : un ET",
-                  "value": 5
-                }
-              ]
-            }
-          ]
+          "id": "sub1_h1",
+          "name": "H1 : un fake",
+          "value": 10
+        },
+        {
+          "id": "sub1_h2",
+          "name": "H2 : une forme de vie terrestre non connu par la science",
+          "value": 25
+        },
+        {
+          "id": "sub1_h3",
+          "name": "H3 : un ET",
+          "value": 60
         }
-      ],
-      "steps": [
-        " Presentation cadre de la xxxxxxx",
-        " Presentation de la photo",
-        " Resemblance physique",
-        " Montant métaliques",
-        " etiquesttes",
-        " carelage",
-        " banc",
-        " Panneau déflouté"
+      ]
+    },
+    {
+      "id": "storie 3 ",
+      "name": "Les araignées nous piquent-elles vraiment ? - coté sceptique",
+      "link": "https://www.youtube.com/watch?v=Xm3uRRg8RDM&ab_channel=C%27estvraicemensonge%3F",
+      "description": "Les araignées nous piquent/mordent la nuit ? \n SI VOUS AVEZ PEUR DES ARAIGNÉES, je vous conseille vivement de regarder cette vidéo.",
+      "question": "Les araignées nous piquent pendant notre sommeil ?",
+      "hypotheses": [
+        {
+          "id": "sub0_h0",
+          "name": "H0 : non , jamais ",
+          "value": 20
+        },
+        {
+          "id": "sub0_h1",
+          "name": "H1 : non, tres rarement",
+          "value": 55
+        },
+        {
+          "id": "sub0_h2",
+          "name": "H2 : Oui, mais pas souvent ",
+          "value": 15
+        },
+        {
+          "id": "sub0_h3",
+          "name": "H3 : Oui et régulierement ",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "storie 4 ",
+      "name": "Les araignées nous piquent-elles vraiment ? - coté tenant",
+      "link": "https://www.youtube.com/watch?v=Xm3uRRg8RDM&ab_channel=C%27estvraicemensonge%3F",
+      "description": "Les araignées nous piquent/mordent la nuit ? \n SI VOUS AVEZ PEUR DES ARAIGNÉES, je vous conseille vivement de regarder cette vidéo.",
+      "question": "Les araignées nous piquent pendant notre sommeil ?",
+      "hypotheses": [
+        {
+          "id": "sub0_h0",
+          "name": "H0 : non , jamais ",
+          "value": 5
+        },
+        {
+          "id": "sub0_h1",
+          "name": "H1 : non, tres rarement",
+          "value": 10
+        },
+        {
+          "id": "sub0_h2",
+          "name": "H2 : Oui, mais pas souvent ",
+          "value": 25
+        },
+        {
+          "id": "sub0_h3",
+          "name": "H3 : Oui et régulierement ",
+          "value": 60
+        }
+      ]
+    }
+  ,
+    {
+      "id": "storie 5 ",
+      "name": "Le test de Rorschach : FIABLE ou PAS FIABLE ?  - coté sceptique",
+      "link": "https://www.youtube.com/watch?v=tG9tsnLET5E&ab_channel=GMilgram",
+      "description": "Les tâches d'encre du test de Rorschach fêtent leurs 100 ans cette année. Le test psychologique créé par Hermann Rorschach en 1921 est célèbre dans le monde entier et a inondé la culture populaire des décennies passées, influençant les toiles de Andy Warhol comme les comics américains.",
+      "question": "Le test de Rorschach est-il fiable ?",
+      "hypotheses": [
+        {
+          "id": "sub0_h0",
+          "name": "H0 : non pas du tout  ",
+          "value": 80
+        },
+        {
+          "id": "sub0_h1",
+          "name": "H1 : non, mais il peut etre utile dans certains cas",
+          "value": 10
+        },
+        {
+          "id": "sub0_h2",
+          "name": "H2 : Oui, meme si il n'est pas parfait ",
+          "value": 5
+        },
+        {
+          "id": "sub0_h3",
+          "name": "H3 : Oui, c'est un outil indispensable ",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "storie 6 ",
+      "name": "Le test de Rorschach : FIABLE ou PAS FIABLE ?  - coté tenant",
+      "link": "https://www.youtube.com/watch?v=tG9tsnLET5E&ab_channel=GMilgram",
+      "description": "Les tâches d'encre du test de Rorschach fêtent leurs 100 ans cette année. Le test psychologique créé par Hermann Rorschach en 1921 est célèbre dans le monde entier et a inondé la culture populaire des décennies passées, influençant les toiles de Andy Warhol comme les comics américains.",
+      "question": "Le test de Rorschach est-il fiable ?",
+      "hypotheses": [
+        {
+          "id": "sub0_h0",
+          "name": "H0 : non pas du tout  ",
+          "value": 5
+        },
+        {
+          "id": "sub0_h1",
+          "name": "H1 : non, mais il peut etre utile dans certains cas",
+          "value": 10
+        },
+        {
+          "id": "sub0_h2",
+          "name": "H2 : Oui, meme si il n'est pas parfait ",
+          "value": 25
+        },
+        {
+          "id": "sub0_h3",
+          "name": "H3 : Oui, c'est un outil indispensable ",
+          "value": 60
+        }
       ]
     }
   ]

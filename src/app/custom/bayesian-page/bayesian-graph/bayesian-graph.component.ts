@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BayesianSubjectModel} from '../bayesian-model/bayesian-subject.model';
+import {BayesianStorieModel} from '../bayesian-model/bayesian-storie.model';
 
 @Component({
     selector: 'app-bayesian-graph',
@@ -9,7 +9,22 @@ import {BayesianSubjectModel} from '../bayesian-model/bayesian-subject.model';
 
 export class BayesianGraphComponent implements OnInit {
 
-    @Input() subject!: BayesianSubjectModel;
+    private _storie: BayesianStorieModel;
+
+    @Input()
+    set storie(value: BayesianStorieModel) {
+        this._storie = value;
+        // initialise hypothesis area (in percent)
+        this.initialHypothesisArea = [];
+        this.currentRange = [];
+        this.finalHypothesisArea = [];
+
+        this._storie.hypotheses.forEach((hypothesis, index) => {
+            this.initialHypothesisArea.push(hypothesis.value);
+            this.finalHypothesisArea.push(hypothesis.value);
+            this.currentRange.push(50);
+        });
+    };
 
     initialHypothesisArea = [];
 
@@ -24,12 +39,6 @@ export class BayesianGraphComponent implements OnInit {
     }
 
     ngOnInit() {
-        //initialise hypothesis area (in percent)
-        this.subject.hypotheses.forEach((hypothesis, index) => {
-            this.initialHypothesisArea.push(hypothesis.value);
-            this.finalHypothesisArea.push(hypothesis.value);
-            this.currentRange.push(50);
-        });
 
     }
 

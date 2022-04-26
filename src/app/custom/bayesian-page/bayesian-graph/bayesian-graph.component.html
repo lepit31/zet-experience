@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row mt-1">
         <div class="col-sm-12  text-center">
-            <div class="bayesian-question">{{subject.name}}</div>
+            <div class="bayesian-question">{{_storie.question}}</div>
             <div>Ma croyance initial</div>
             <div class="bayesian-container">
                 <div *ngFor="let value of initialHypothesisArea; let index = index"
@@ -12,7 +12,7 @@
     </div>
     <div class="row mt-1" *ngFor="let range of currentRange; let indexRange = index;trackBy:trackByIndex;">
         <div class="col-sm-12 ">
-            <div>{{subject.hypotheses[indexRange].name}}</div>
+            <div>{{_storie.hypotheses[indexRange].name}}</div>
             <div class="slide-container">
                 <input type="range" min="0" max="100" [(ngModel)]="currentRange[indexRange]"
                        (ngModelChange)="resize()"
