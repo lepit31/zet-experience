@@ -25,18 +25,7 @@
         </div>
       </div>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-        <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Examples</span>
-          </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div>
-        </li>
+
 
         <li class="nav-item dropdown"  style="cursor: pointer">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
@@ -70,7 +59,7 @@
         <li class="nav-item dropdown" style="cursor: pointer">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-ui-04 d-lg-none"></i>
-            <span class="nav-link-inner--text">Game</span>
+            <span class="nav-link-inner--text">Math</span>
           </a>
           <div class="dropdown-menu-xl dropdown-menu" >
             <div class="dropdown-menu-inner">
@@ -82,15 +71,6 @@
                   <h6 class="heading text-primary mb-md-1">Monty Hall</h6>
                   <p class="description d-none d-md-inline-block mb-0">Probabilité conditionnelle
                     </p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['/bayesian']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                  <i class="fa fa-ioxhost"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">Histoires avec Bayes</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Faire bouger les curseurs</p>
                 </div>
               </a>
               <a routerLinkActive="active" [routerLink]="['/logical']" class="media d-flex align-items-center">
@@ -105,6 +85,25 @@
             </div>
           </div>
         </li>
+        <li class="nav-item dropdown" style="cursor: pointer">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-ui-04 d-lg-none"></i>
+            <span class="nav-link-inner--text">Bayes</span>
+          </a>
+          <div class="dropdown-menu-xl dropdown-menu" >
+            <div class="dropdown-menu-inner">
+              <a routerLinkActive="active" [routerLink]="['/bayesian']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="fa fa-ioxhost"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Histoires avec Bayes</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Faire bouger les curseurs</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
         <li class="nav-item dropdown">
           <a   [routerLink]="['/faq']" class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
@@ -114,7 +113,7 @@
       </ul>
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://twitter.com/pitorreb" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
+          <a class="nav-link nav-link-icon" href="https://twitter.com/ExpZet" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
             <i class="fa fa-twitter-square"></i>
             <span class="nav-link-inner--text d-lg-none">Twitter</span>
           </a>
