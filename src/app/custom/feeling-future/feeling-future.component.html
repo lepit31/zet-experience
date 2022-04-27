@@ -31,10 +31,10 @@
                             </div>
                             <div class="col-sm-2 text-center">
                                 <button *ngIf="currentStatus == 'success'" class="btn btn-1 btn-outline-success"
-                                        type="button">Success
+                                        type="button">Reussite
                                 </button>
                                 <button *ngIf="currentStatus == 'fail'" class="btn btn-1 btn-outline-danger"
-                                        type="button">Fail
+                                        type="button">Echec
                                 </button>
                                 <button *ngIf="currentStatus == 'waiting'" class="btn btn-1 btn-outline-warning"
                                         type="button">Wait <i class="fa fa-spinner"></i></button>
@@ -47,17 +47,17 @@
                             <div class="col-sm-5  text-center">
 
                                 <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('left')"
-                                        [disabled]="feelingFutureForm.invalid|| isWaiting">Left
+                                        [disabled]="feelingFutureForm.invalid|| isWaiting">Gauche
                                 </button>
                             </div>
                             <div class="col-sm-2 text-center">
                                 <button class="btn btn-primary" type="button" (click)="onResetWaiting()"
-                                        [disabled]="!isWaiting">next Image
+                                        [disabled]="!isWaiting">Image Suivante
                                 </button>
                             </div>
                             <div class="col-sm-5  text-center">
                                 <button class="btn btn-primary" type="button" (click)="onUserPredictLocation('right')"
-                                        [disabled]="feelingFutureForm.invalid || isWaiting">Right
+                                        [disabled]="feelingFutureForm.invalid || isWaiting">Droite
                                 </button>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                         <span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
                                     </div>
                                     <input class="form-control"
-                                           placeholder="Recherche par pseudo ou vide pour statistique global "
+                                           placeholder="Recherche par pseudo ou vide pour une statistique global "
                                            type="text" (focus)="focus=true"
                                            (blur)="focus=false" [(ngModel)]="statUserPseudo">
                                 </div>
@@ -108,13 +108,13 @@
                         </div>
 
                         <div class="col-lg-6  text-center">
-                            <button class="btn btn-primary" type="button" (click)="onGetStatistic()">Get Stat
+                            <button class="btn btn-primary" type="button" (click)="onGetStatistic()">Rechercher
                             </button>
                         </div>
                     </div>
                     <div *ngIf="displayStat" class="row row-grid ">
                         <div class="col-lg-2  text-center">
-                            User : {{statNbUser}}
+                            Utilisateur : {{statNbUser}}
                         </div>
                         <div class="col-lg-2  text-center">
                             Global : {{statNbPredictionSuccess}} / {{statNbPrediction}}
@@ -149,10 +149,9 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            Hypothese testée : Notre physiologie peut anticiper des simulies érotiques imprévisibles avant qu'ils ne
-                            surviennent.
+                            Hypothèse  testée : Notre physiologie peut anticiper des simulies érotiques imprévisibles avant qu'ils ne surviennent.
                             <br>
-                            Hypothese nulle : L'humain ne fait pas mieux que le hazard
+                            Hypothèse  nulle : L'humain ne fait pas mieux que le hasard
                         </div>
                     </div>
                 </div>
@@ -169,29 +168,22 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ol>
-                                <li>Le participant à plus de 18 ans et accepte de voir des images pouvant heurter les
-                                    personnes les plus sensible par son caractère explicitement sexuel ou graphique
+                                <li>Le participant à plus de 18 ans et accepte de voir des images pouvant heurter les personnes les plus sensible par son caractère explicitement sexuel ou graphique (guerre / bléssure)
                                 </li>
-                                <li>Le participant doit renseigner un pseudonyme d’au moins 3 caractères et accepter les
-                                    conditions d’utilisation
+                                <li>Le participant doit renseigner un pseudonyme d’au moins 3 caractères et accepter les conditions d’utilisation
                                 </li>
                                 <li>Le participant peut pratiquer 3 minutes de relaxation grâce a une musique
                                     appaisantes ( <a href="https://www.youtube.com/watch?v=9TGlc0Fufgk">exemple 1</a> ,
                                     <a href="https://www.youtube.com/watch?v=bQoOev5GNYM">exemple 2</a> , <a
                                             href="https://www.youtube.com/watch?v=Bf_YemfEaDs">exemple 3</a> )
                                 </li>
-                                <li>Le participant doit essayer de deviner sous quel rideau se trouve l’image grâce au
-                                    bouton gauche ou droite
+                                <li>Le participant doit essayer de deviner sous quel rideau se trouve l’image grâce au bouton gauche ou droite
                                 </li>
-                                <li>Une fois la sélection faite par le participant le rideau se leve et dévoile le
-                                    résultat soit une image (érotique ou non érotique) soit un carré blanc si l’image
-                                    était sous l’autre rideau
+                                <li>Une fois la sélection faite par le participant le rideau se lève et dévoile le résultat soit une image (érotique ou non érotique) soit un carré blanc si l’image était sous l’autre rideau
                                 </li>
-                                <li>Les statistiques de la session sont mis à jour et le participant doit cliquer sur le
-                                    bouton « image suivante »
+                                <li>Les statistiques de la session sont mis à jour et le participant doit cliquer sur le bouton « Image suivante »
                                 </li>
-                                <li>Il n’y a pas de limite de temps ou de nombre de prédictions mais plus le nombre de
-                                    prédiction est importante plus la p-value a du sens
+                                <li>Il n’y a pas de limite de temps ou de nombre de prédictions mais plus le nombre de prédiction est importante plus la p-value a du sens
                                 </li>
                             </ol>
                         </div>
@@ -249,7 +241,7 @@
                             Une fonction de test permet de simuler un millier de prédiction<br/>
                             Le serveur étant dans le cloud AWS, l’ordinateur du participant ne connais pas le code du
                             serveur et ne peut pas influencer dessus, cela exclu en cas de résultat positif l’hypothèse
-                            de la Psychokinesis
+                            de la Psychokinésies
                         </div>
                     </div>
                 </div>
@@ -265,7 +257,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            Seul un pseudonnyme est demandé, aucune autre information personnelle ou cookie n’est
+                            Seul un pseudonyme est demandé, aucune autre information personnelle ou cookie n’est
                             demandé,
                             Chaque prédiction est enregistrée avec les informations suivante :
                             <ul>
@@ -295,12 +287,12 @@
                         </div>
 
                         <div class="col-sm-6">
-                            Une distribution binomial correspond a une probabilité de réponse au hazard <br>
-                            Elle a les caractéristiques suivante :
+                            Une distribution binomiale correspond à une probabilité de réponse au hasard<br>
+                            Elle a les caractéristiques suivantes :
                             <ol>
-                                <li>Le nombre d'essaie (ici les images uniquement erotique testées) </li>
-                                <li>La probabilité de reussir par le hazard (ici 1 chance sur 2 soit 0.5)</li>
-                                <li>Le nombre de reussite (ici les images erotique trouvées par le participant) </li>
+                                <li>Le nombre d'essai (ici les images uniquement érotiques testées) </li>
+                                <li>La probabilité de réussir par le hasard (ici 1 chance sur 2 soit 0.5)</li>
+                                <li>Le nombre de réussite (ici les images érotiques trouvées par le participant)</li>
                                 <li>La P-Value</li>
                             </ol>
                         </div>
