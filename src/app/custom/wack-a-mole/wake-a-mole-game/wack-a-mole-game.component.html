@@ -8,7 +8,7 @@
             Score : {{score}} /160
         </div>
         <div class="col-md-3 text-center">
-            <button class="btn btn-success" (click)="start()">Start</button>
+            <button class="btn btn-success" (click)="start()" [disabled]="gameInProgress">Start</button>
         </div>
     </div>
 </div>
