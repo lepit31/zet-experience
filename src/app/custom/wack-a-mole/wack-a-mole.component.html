@@ -1,0 +1,45 @@
+<main>
+    <div class="position-relative">
+        <!-- shape Hero -->
+        <section class="section section-shaped pb-0">
+            <div class="shape shape-style-1 shape-default">
+            </div>
+        </section>
+        <section class="section section-sm ">
+            <div class="container py-lg-md d-flex">
+                <div class="col px-0">
+                    <div class="row" >
+                        <app-wack-a-mole-case (winEvent)="addScore($event)" [event]="newStates[0]" ></app-wack-a-mole-case>
+                        <app-wack-a-mole-case (winEvent)="addScore($event)" [event]="newStates[1]" ></app-wack-a-mole-case>
+                        <app-wack-a-mole-case (winEvent)="addScore($event)" [event]="newStates[2]" ></app-wack-a-mole-case>
+                        <app-wack-a-mole-case (winEvent)="addScore($event)" [event]="newStates[3]" ></app-wack-a-mole-case>
+                    </div>
+                    <div class="row" >
+                        <div class="col-md-12">
+                            {{score}}
+                            <button class="btn btn-info" (click)="raz()">raz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-sm">
+            <div class="container  d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4> Credit :</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

@@ -27,6 +27,8 @@ import {BayesianGraphComponent} from './custom/bayesian-page/bayesian-graph/baye
 import {BayesianPageComponent} from './custom/bayesian-page/bayesian-page.component';
 import {SectionsModule} from './sections/sections.module';
 import { LogicalComponent } from './custom/logical/logical.component';
+import {WackAMoleComponent} from './custom/wack-a-mole/wack-a-mole.component';
+import {WackAMoleCaseComponent} from './custom/wack-a-mole/wack-a-mole-case/wack-a-mole-case.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { LogicalComponent } from './custom/logical/logical.component';
     MontyHallGameComponent,
     BayesianGraphComponent,
     BayesianPageComponent,
-    LogicalComponent
+    LogicalComponent,
+    WackAMoleComponent,
+    WackAMoleCaseComponent
   ],
     imports: [
         BrowserModule,

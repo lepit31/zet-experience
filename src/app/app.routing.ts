@@ -14,6 +14,7 @@ import {ZernerComponent} from './custom/zener/zerner.component';
 import {MontyHallComponent} from './custom/monty-hall/monty-hall.component';
 import {BayesianPageComponent} from './custom/bayesian-page/bayesian-page.component';
 import {LogicalComponent} from './custom/logical/logical.component';
+import {WackAMoleComponent} from './custom/wack-a-mole/wack-a-mole.component';
 
 const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
     {path: 'zener', component: ZernerComponent},
     {path: 'bayesian', component: BayesianPageComponent},
     {path: 'logical', component: LogicalComponent},
+    {path: 'wack-a-mole', component: WackAMoleComponent},
     {path: 'login', component: LoginComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
