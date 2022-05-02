@@ -42,7 +42,8 @@ export class WackAMoleGameComponent implements OnInit {
                     }
                     if (this.strategy === 'hard') {
                         // one monster on each case
-                        this.newStates[currentCases.splice(this.randomIntFromInterval(0, currentCases.length), 1)[0]].next('monster');
+                        const j = currentCases.splice(this.randomIntFromInterval(0, currentCases.length - 1), 1)[0];
+                        this.newStates[j].next('monster');
                     }
                     i++;
                     if (i >= (this.cols.length * this.rows.length)) {
