@@ -29,6 +29,7 @@ import {SectionsModule} from './sections/sections.module';
 import { LogicalComponent } from './custom/logical/logical.component';
 import {WackAMoleComponent} from './custom/wack-a-mole/wack-a-mole.component';
 import {WackAMoleCaseComponent} from './custom/wack-a-mole/wack-a-mole-case/wack-a-mole-case.component';
+import {WackAMoleGameComponent} from './custom/wack-a-mole/wake-a-mole-game/wack-a-mole-game.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {WackAMoleCaseComponent} from './custom/wack-a-mole/wack-a-mole-case/wack
     BayesianPageComponent,
     LogicalComponent,
     WackAMoleComponent,
+    WackAMoleGameComponent,
     WackAMoleCaseComponent
   ],
     imports: [

@@ -18,6 +18,12 @@ export class WackAMoleCaseComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.eventsSubscription = this.event.subscribe((newState: string) => {
             this.state = newState;
+            setTimeout(() => {
+                // prevent change if raz
+                if (this.state === 'monster') {
+                    this.state = 'blank';
+                }
+            }, 650);
         });
     }
 

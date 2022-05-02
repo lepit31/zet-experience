@@ -1,0 +1,16 @@
+<div class="container">
+    <div *ngFor="let rowPosition of rows" class="row ">
+        <app-wack-a-mole-case *ngFor="let colPosition of cols" (winEvent)="addScore($event)"
+                              [event]="newStates[colPosition+ (rowPosition * cols.length)]"></app-wack-a-mole-case>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-3 text-center">
+            Score : {{score}} /160
+        </div>
+        <div class="col-md-3 text-center">
+            <button class="btn btn-success" (click)="start()">Start</button>
+        </div>
+    </div>
+</div>
+
+

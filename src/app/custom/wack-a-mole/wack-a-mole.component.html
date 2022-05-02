@@ -6,22 +6,10 @@
             </div>
         </section>
         <section class="section section-sm ">
-            <div class="container py-lg-md d-flex">
-                <div class="col px-0">
-                    <div class="row" >
-                        <app-wack-a-mole-case (winEvent)="addScore($event)" [event]="newStates[0]" ></app-wack-a-mole-case>
-                        <app-wack-a-mole-case (winEvent)="addScore($event)" [event]="newStates[1]" ></app-wack-a-mole-case>
-                        <app-wack-a-mole-case (winEvent)="addScore($event)" [event]="newStates[2]" ></app-wack-a-mole-case>
-                        <app-wack-a-mole-case (winEvent)="addScore($event)" [event]="newStates[3]" ></app-wack-a-mole-case>
-                    </div>
-                    <div class="row" >
-                        <div class="col-md-12">
-                            {{score}}
-                            <button class="btn btn-info" (click)="raz()">raz</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <app-wack-a-mole-game strategy="easy"></app-wack-a-mole-game>
+        </section>
+        <section class="section section-sm ">
+            <app-wack-a-mole-game strategy="hard"></app-wack-a-mole-game>
         </section>
         <section class="section section-sm">
             <div class="container  d-flex">
