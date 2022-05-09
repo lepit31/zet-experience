@@ -5,29 +5,39 @@
             <div class="shape shape-style-1 shape-default">
             </div>
         </section>
-        <section class="section section-sm ">
-            <app-wack-a-mole-game strategy="easy"></app-wack-a-mole-game>
-        </section>
-        <section class="section section-sm ">
-            <app-wack-a-mole-game strategy="hard"></app-wack-a-mole-game>
-        </section>
-        <section class="section section-sm">
-            <div class="container  d-flex">
-                <div class="col px-0">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h4> Credit :</h4>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <ul>
-                            </ul>
+        <section class="section bg-secondary">
+            <div class="container-fluid">
+                <div class="row row-grid align-items-center">
+                    <div class="col-lg-5 offset-2">
+                        <app-wack-a-mole-game strategy="easy"></app-wack-a-mole-game>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="pl-md-5">
+                            <h3>Egalité des chances </h3>
+                            <p>Cette variante du jeu de la taupe permet de tester les réflexes du joueur, sur chaque case un seul petit monstre apparait toute les 0.3 seconde pendant 0.65 seconde, chaque frappe réussie rapporte 10 points pour un total de 160 points.</p>
+                            <p>Avec un peu d’entrainement ce premier test peut être terminé avec un très haut score.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="section">
+        <div class="container-fluid">
+            <div class="row row-grid align-items-center">
+                <div class="col-lg-5 offset-2">
+                    <app-wack-a-mole-game strategy="hard"></app-wack-a-mole-game>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pl-md-5">
+                        <p>Pourtant avec ce deuxième test qui respect exactement les mêmes règles que la précédentes le score du deuxième test est plus faible que le premier (en moyenne).</p>
+                        <p>Une même personne avec les mêmes compétences passant le même type de test avec les mêmes règles peut avoir un score très diffèrent donc même dans un cas aussi simplifié et rigide que le jeu de la taupe la moindre variation de comportement casse l’égalité des chances entre joueur.
+                    </p>
+                        <div  class="font-weight-bold text-warning mt-5">Conclusion : Appliquer les mêmes règles ne suffisent pas à garantir l’égalité des chances entre les citoyens  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     </div>
 </main>
