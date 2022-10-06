@@ -19,7 +19,7 @@ nonEroticImages = ["Miserable pose 3.jpg","Dummy 1.jpg","Dead bodies 1.jpg","Dea
 def lambda_handler(event, context):
 
     #testData()
-    if ((len(event["userPseudo"]) < 3) or not (event["userPrediction"] == "right" or event["userPrediction"] == "left")) :
+    if ((len(event["userPseudo"]) < 3) or not (event["userPrediction"] == locations[0] or event["userPrediction"] == locations[1])) :
         raise Exception('Request not valid')
 
     prediction = createPrediction(event["userPseudo"],event["userPrediction"])
